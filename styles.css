@@ -92,13 +92,14 @@ img {
   color: var(--text);
 }
 
-.logo-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-  opacity: 0.95;
-  box-shadow: 0 0 20px rgba(91, 167, 255, 0.35);
+.logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+  box-shadow: 0 0 0 1px rgba(91, 167, 255, 0.2), 0 0 24px rgba(91, 167, 255, 0.18);
   animation: pulse-soft 4s ease-in-out infinite;
 }
 
