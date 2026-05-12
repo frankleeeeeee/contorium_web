@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contora — Persistent memory layer for AI coding. Workspace awareness, Git context, session recovery, and local-first architecture for VS Code and Cursor."
+    />
+    <title>Contora — Persistent Memory for AI Coding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-inner" aria-label="Primary">
+        <a href="#" class="logo">
+          <span class="logo-mark" aria-hidden="true"></span>
+          CONTORA
+        </a>
+        <div class="nav-links">
+          <a href="#memory">Memory</a>
+          <a href="#features">Features</a>
+          <a href="#how">How it works</a>
+          <a href="#install">Install</a>
+          <a href="https://github.com/frankleeeeeee/contora" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a
+            href="https://marketplace.visualstudio.com/search?term=contora&target=VSCode&category=All%20categories&sortBy=Relevance"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary btn-sm"
+            >Download</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="hero-badge">AI IDE persistent memory</span>
+            <h1>Persistent Memory for AI Coding</h1>
+            <p class="hero-lead">
+              Contora gives AI a continuous understanding of your workspace, goals, and coding sessions—so context survives
+              chat switches, model changes, and restarts.
+            </p>
+            <div class="hero-ctas">
+              <a
+                href="https://marketplace.visualstudio.com/search?term=contora&target=VSCode&category=All%20categories&sortBy=Relevance"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Download extension</a
+              >
+              <a href="https://github.com/frankleeeeeee/contora" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
+                >View on GitHub</a
+              >
+            </div>
+            <ul class="hero-checks">
+              <li>Git-aware</li>
+              <li>Session recovery</li>
+              <li>Context compression</li>
+              <li>Local-first</li>
+              <li>BYOK supported</li>
+            </ul>
+          </div>
+          <div class="dashboard" aria-label="Product preview">
+            <div class="dashboard-header">
+              <span class="dashboard-dot" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span>.contora / workspace memory</span>
+            </div>
+            <div class="dashboard-grid">
+              <div class="panel">
+                <div class="panel-label">Current focus</div>
+                <div class="panel-value" id="focus-text">Refactor auth retry flow</div>
+                <div class="typewriter" id="typewriter" aria-live="polite"></div>
+              </div>
+              <div class="panel">
+                <div class="panel-label">Recent files</div>
+                <div class="panel-value">api/retry.ts · state/memory.json</div>
+                <div class="git-line">+42 −8 · 3 files</div>
+              </div>
+              <div class="panel panel-wide">
+                <div class="panel-label">Session timeline</div>
+                <div class="timeline-mini">
+                  <span>scan</span>
+                  <span>compress</span>
+                  <span>export</span>
+                </div>
+              </div>
+              <div class="panel panel-wide">
+                <div class="panel-label">AI summary</div>
+                <div class="panel-value" style="font-size: 0.78rem; color: var(--text-muted)">
+                  Workspace intent aligned with error handling and fewer duplicate outbound calls.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Memory Showcase -->
+      <section class="section" id="memory">
+        <div class="container two-col">
+          <div>
+            <h2 class="section-title">AI workspace memory, at a glance</h2>
+            <p class="section-lead">
+              Not another chat panel—a structured layer that keeps your project, edits, and intent available to AI across
+              sessions.
+            </p>
+            <div class="feature-list">
+              <h3>Current focus</h3>
+              <p>Track what you are working on; surrounding context updates as you move through the codebase.</p>
+              <h3>Workspace awareness</h3>
+              <p>Recent files, Git changes, and active tasks are continuously summarized for smarter prompts.</p>
+              <h3>Session persistence</h3>
+              <p>Close the editor today. Open it tomorrow and pick up without rebuilding context from scratch.</p>
+            </div>
+          </div>
+          <div class="showcase-visual">
+            <div class="memory-row">
+              <div class="memory-icon">◎</div>
+              <div>
+                <strong style="color: var(--text)">Focus</strong>
+                <div style="color: var(--text-muted); font-size: 0.85rem">Payment retry &amp; idempotency keys</div>
+              </div>
+            </div>
+            <div class="memory-row">
+              <div class="memory-icon">⎇</div>
+              <div>
+                <strong style="color: var(--text)">Git</strong>
+                <div style="color: var(--text-muted); font-size: 0.85rem">Staged: handlers/pay.ts · Modified: config</div>
+              </div>
+            </div>
+            <div class="memory-row">
+              <div class="memory-icon">◇</div>
+              <div>
+                <strong style="color: var(--text)">Compressed context</strong>
+                <div style="color: var(--text-muted); font-size: 0.85rem">Ranked files + event history within token budget</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workflow timeline -->
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Workflow timeline</h2>
+          <p class="section-lead">From raw activity to AI-ready memory—lightweight motion, no noisy chrome.</p>
+          <div class="two-col" style="align-items: center">
+            <div class="timeline">
+              <div class="timeline-item">
+                <h4>Open your workspace</h4>
+                <p>Editors, saves, and Git events feed the scanner continuously.</p>
+              </div>
+              <div class="timeline-item">
+                <h4>Set focus &amp; work normally</h4>
+                <p>Memory builders rank files, summarize activity, and respect ignore rules.</p>
+              </div>
+              <div class="timeline-item">
+                <h4>Export or restore</h4>
+                <p>One action produces structured context for your model—or restores session state.</p>
+              </div>
+            </div>
+            <p class="quote" style="margin: 0; border-radius: var(--radius)">
+              <strong>“AI shouldn’t lose context every session.”</strong><br />
+              Contora keeps a local snapshot so assistants stay aligned with what actually matters.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="section" id="features">
+        <div class="container">
+          <h2 class="section-title">Product features</h2>
+          <p class="section-lead">Everything is workspace-owned, optional BYOK for analysis—no hidden cloud memory.</p>
+          <div class="cards">
+            <article class="card">
+              <div class="card-num">01</div>
+              <h3>AI focus tracking</h3>
+              <p>Manual focus, inferred goals, and short task summaries tied to your current intent.</p>
+            </article>
+            <article class="card">
+              <div class="card-num">02</div>
+              <h3>Workspace memory</h3>
+              <p>Active files, recent edits, and Git-aware prioritization in one structured layer.</p>
+            </article>
+            <article class="card">
+              <div class="card-num">03</div>
+              <h3>Context compression</h3>
+              <p>Semantic summaries, ranked paths, and token-aware exports for long sessions.</p>
+            </article>
+            <article class="card">
+              <div class="card-num">04</div>
+              <h3>Snapshot recovery</h3>
+              <p>Save workspace state and restore editors alongside active memory blocks.</p>
+            </article>
+            <article class="card">
+              <div class="card-num">05</div>
+              <h3>Local-first architecture</h3>
+              <p>State under <code style="color: var(--accent)">.contora/</code>—you control retention and sharing.</p>
+            </article>
+            <article class="card">
+              <div class="card-num">06</div>
+              <h3>BYOK support</h3>
+              <p>Optional keys for OpenAI, Claude, Gemini, and DeepSeek—stored in the editor secret store, not settings JSON.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section class="section" id="how">
+        <div class="container">
+          <h2 class="section-title">How it works</h2>
+          <p class="section-lead">A straight pipeline from activity to structured memory—built for real AI coding workflows.</p>
+          <div class="flow">
+            <div class="flow-step">Workspace activity</div>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <div class="flow-step">Scanner</div>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <div class="flow-step">Memory builder</div>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <div class="flow-step">Compression</div>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <div class="flow-step">Export / restore</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Developer experience -->
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Developer experience</h2>
+          <p class="section-lead">Built for developers who pair with AI daily—monorepos, refactors, and agent loops included.</p>
+          <div class="dev-block">
+            <p>
+              <strong style="color: var(--text)">“Your coding session now has memory.”</strong>
+              Switch models without rebuilding the same file list and Git story every time.
+            </p>
+            <p>
+              <strong style="color: var(--text)">“Not another AI chat panel.”</strong>
+              A persistent memory layer that reduces token noise and repeated context dumps.
+            </p>
+            <p>
+              <strong style="color: var(--text)">“Contora continuously maintains AI workspace awareness.”</strong>
+              Ranked priorities, compact history, and exports that match how you actually work.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Git & workspace -->
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Git &amp; workspace awareness</h2>
+          <p class="section-lead">Staged and modified files surface automatically—so AI attention follows real change, not static trees.</p>
+          <div class="quotes">
+            <blockquote class="quote">Staged paths and diffs inform ranking before you paste a single path.</blockquote>
+            <blockquote class="quote">Ignore rules and budgets keep large repos usable without drowning models in noise.</blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison -->
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Why a memory layer?</h2>
+          <p class="section-lead">Compared to ad-hoc copy-paste, Contora optimizes for continuity and cost.</p>
+          <div style="overflow-x: auto">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Capability</th>
+                  <th>Typical chat-only flow</th>
+                  <th>Contora</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Persistent workspace snapshot</td>
+                  <td class="check-partial">Manual</td>
+                  <td class="check-yes">Automatic</td>
+                </tr>
+                <tr>
+                  <td>Git-aware prioritization</td>
+                  <td class="check-partial">Sometimes</td>
+                  <td class="check-yes">Built-in</td>
+                </tr>
+                <tr>
+                  <td>Session restore</td>
+                  <td class="check-partial">Limited</td>
+                  <td class="check-yes">Designed for it</td>
+                </tr>
+                <tr>
+                  <td>Token-efficient exports</td>
+                  <td class="check-partial">Ad hoc</td>
+                  <td class="check-yes">Compression + budgets</td>
+                </tr>
+                <tr>
+                  <td>Local-first data</td>
+                  <td class="check-partial">Varies</td>
+                  <td class="check-yes">Workspace-owned</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-band" id="install">
+        <h2>Keep your AI in context</h2>
+        <p>Install from the Visual Studio Marketplace (search “contora”) or build from source on GitHub.</p>
+        <div class="cta-buttons">
+          <a
+            href="https://marketplace.visualstudio.com/search?term=contora&target=VSCode&category=All%20categories&sortBy=Relevance"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Install for VS Code</a
+          >
+          <a href="https://github.com/frankleeeeeee/contora" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
+            >Open GitHub</a
+          >
+        </div>
+        <p class="cta-note">Supports Cursor, VS Code, local runtime, and optional BYOK providers.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <span class="logo-mark" aria-hidden="true"></span>
+              CONTORA
+            </a>
+            <p>Persistent workspace memory for AI-native development—local, structured, and session-aware.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Product</h4>
+              <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how">How it works</a></li>
+                <li><a href="#install">Install</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Resources</h4>
+              <ul>
+                <li>
+                  <a href="https://github.com/frankleeeeeee/contora" target="_blank" rel="noopener noreferrer">GitHub repository</a>
+                </li>
+                <li>
+                  <a
+                    href="https://marketplace.visualstudio.com/search?term=contora&target=VSCode&category=All%20categories&sortBy=Relevance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >VS Marketplace</a
+                  >
+                </li>
+                <li>
+                  <a href="https://github.com/frankleeeeeee/contora#readme" target="_blank" rel="noopener noreferrer">README</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© Contora. MIT License.</span>
+          <span>Memory · Focus · Context · Persistence</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var lines = [
+          "Infer: stabilize retries, classify errors…",
+          "Next: wire tests + export markdown context",
+        ];
+        var el = document.getElementById("typewriter");
+        var focusEl = document.getElementById("focus-text");
+        var focuses = ["Refactor auth retry flow", "Ship session export adapters", "Tune token budget defaults"];
+        if (!el) return;
+        var li = 0,
+          fi = 0,
+          ch = 0,
+          phase = "typing";
+        function step() {
+          var line = lines[li % lines.length];
+          if (phase === "typing") {
+            ch++;
+            el.textContent = line.slice(0, ch);
+            if (ch >= line.length) {
+              phase = "pause";
+              setTimeout(function () {
+                phase = "deleting";
+              }, 1600);
+            }
+          } else if (phase === "deleting") {
+            ch--;
+            el.textContent = line.slice(0, ch);
+            if (ch <= 0) {
+              li++;
+              if (li % 2 === 0 && focusEl) {
+                fi++;
+                focusEl.textContent = focuses[fi % focuses.length];
+              }
+              phase = "typing";
+            }
+          }
+        }
+        setInterval(function () {
+          if (phase !== "pause") step();
+        }, 42);
+      })();
+    </script>
+  </body>
+</html>
