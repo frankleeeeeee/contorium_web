@@ -279,9 +279,91 @@ img {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.dashboard:hover {
+.dashboard.hero-video:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 60px rgba(91, 167, 255, 0.1), 0 24px 48px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 60px rgba(91, 167, 255, 0.1), 0 24px 48px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(91, 167, 255, 0.1);
+}
+
+.dashboard.hero-video {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--glow), 0 0 0 1px rgba(91, 167, 255, 0.08), 0 24px 48px rgba(0, 0, 0, 0.28);
+}
+
+.hero-video-chrome {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-video-dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.hero-video-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.hero-video-dots span:nth-child(1) {
+  background: #e85d5d;
+}
+.hero-video-dots span:nth-child(2) {
+  background: var(--warning);
+}
+.hero-video-dots span:nth-child(3) {
+  background: var(--success);
+}
+
+.hero-video-path {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-align: right;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero-video-frame {
+  position: relative;
+  z-index: 0;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(18, 24, 33, 0.65) 0%, var(--bg-primary) 100%);
+}
+
+.hero-video-frame::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(91, 167, 255, 0.14);
+  pointer-events: none;
+}
+
+.hero-video-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+  border-radius: 10px;
+  position: relative;
+  z-index: 0;
 }
 
 .dashboard-header {

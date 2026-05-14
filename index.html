@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contora — Persistent memory layer for AI coding. Workspace awareness, Git context, session recovery, and local-first architecture for VS Code and Cursor."
+      content="Contora — persistent memory layer for AI coding/.Workspace awareness, Git context, session recovery, and local-first architecture for VS Code and Cursor."
     />
     <title>Contora — Persistent Memory for AI Coding</title>
     <link rel="icon" href="logo.png" type="image/png" />
@@ -78,36 +78,13 @@
               <li>BYOK supported</li>
             </ul>
           </div>
-          <div class="dashboard" aria-label="Product preview">
-            <div class="dashboard-header">
-              <span class="dashboard-dot" aria-hidden="true"><span></span><span></span><span></span></span>
-              <span>.contora / workspace memory</span>
+          <div class="dashboard hero-video" aria-label="Product demo video">
+            <div class="hero-video-chrome">
+              <span class="hero-video-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span class="hero-video-path">.contora / preview</span>
             </div>
-            <div class="dashboard-grid">
-              <div class="panel">
-                <div class="panel-label">Current focus</div>
-                <div class="panel-value" id="focus-text">Refactor auth retry flow</div>
-                <div class="typewriter" id="typewriter" aria-live="polite"></div>
-              </div>
-              <div class="panel">
-                <div class="panel-label">Recent files</div>
-                <div class="panel-value">api/retry.ts · state/memory.json</div>
-                <div class="git-line">+42 −8 · 3 files</div>
-              </div>
-              <div class="panel panel-wide">
-                <div class="panel-label">Session timeline</div>
-                <div class="timeline-mini">
-                  <span>scan</span>
-                  <span>compress</span>
-                  <span>export</span>
-                </div>
-              </div>
-              <div class="panel panel-wide">
-                <div class="panel-label">AI summary</div>
-                <div class="panel-value" style="font-size: 0.78rem; color: var(--text-muted)">
-                  Workspace intent aligned with error handling and fewer duplicate outbound calls.
-                </div>
-              </div>
+            <div class="hero-video-frame">
+              <video src="contora.mp4" autoplay loop muted playsinline></video>
             </div>
           </div>
         </div>
@@ -397,48 +374,5 @@
       </div>
     </footer>
 
-    <script>
-      (function () {
-        var lines = [
-          "Infer: stabilize retries, classify errors…",
-          "Next: wire tests + export markdown context",
-        ];
-        var el = document.getElementById("typewriter");
-        var focusEl = document.getElementById("focus-text");
-        var focuses = ["Refactor auth retry flow", "Ship session export adapters", "Tune token budget defaults"];
-        if (!el) return;
-        var li = 0,
-          fi = 0,
-          ch = 0,
-          phase = "typing";
-        function step() {
-          var line = lines[li % lines.length];
-          if (phase === "typing") {
-            ch++;
-            el.textContent = line.slice(0, ch);
-            if (ch >= line.length) {
-              phase = "pause";
-              setTimeout(function () {
-                phase = "deleting";
-              }, 1600);
-            }
-          } else if (phase === "deleting") {
-            ch--;
-            el.textContent = line.slice(0, ch);
-            if (ch <= 0) {
-              li++;
-              if (li % 2 === 0 && focusEl) {
-                fi++;
-                focusEl.textContent = focuses[fi % focuses.length];
-              }
-              phase = "typing";
-            }
-          }
-        }
-        setInterval(function () {
-          if (phase !== "pause") step();
-        }, 42);
-      })();
-    </script>
   </body>
 </html>
