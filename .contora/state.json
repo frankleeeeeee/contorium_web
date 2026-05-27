@@ -3,14 +3,24 @@
   "currentTask": "Buid Conora landing page",
   "openFiles": [
     "index.html",
-    "README.md"
+    "修改方案.md",
+    "修改方案2.md",
+    "README.md",
+    "docs/index.html",
+    "mcp/index.html",
+    "blog/index.html",
+    "architecture/index.html"
   ],
-  "recentFiles": [],
+  "recentFiles": [
+    "修改方案2.md",
+    "修改方案.md"
+  ],
   "gitStaged": [],
   "gitWorking": [
     ".contora/events/sess_mp487yx1_2450523b.jsonl",
-    ".contora/state.json"
+    ".contora/state.json",
+    "修改方案2.md"
   ],
   "notes": "",
-  "lastUpdated": 1779442548526
+  "lastUpdated": 1779851699604
 }

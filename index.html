@@ -34,17 +34,17 @@
           <a href="#problem">Problem</a>
           <a href="#demo">Demo</a>
           <a href="#how">How it works</a>
+          <a href="#compatibility">Compatible</a>
+          <a href="#install">Install</a>
           <a href="mcp/">MCP</a>
           <a href="architecture/">Architecture</a>
           <a href="docs/">Docs</a>
           <a href="blog/">Blog</a>
           <a href="https://github.com/frankleeeeeee/contorium" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a
-            href="https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#install"
             class="btn btn-primary btn-sm"
-            >Get started</a
+            >Install</a
           >
         </div>
       </nav>
@@ -58,30 +58,14 @@
             <span class="hero-badge">AI Agent Memory Infrastructure</span>
             <h1>Persistent Memory for AI Coding Agents</h1>
             <p class="hero-lead">
-              Contorium gives Claude, Cursor, GPT, and AI coding agents long-term workspace memory—active files, Git
-              changes, project goals, and sessions tracked automatically across chats, model switches, and IDE restarts.
+              Give Claude, Cursor, and AI coding agents long-term workspace memory across sessions, model switches, and
+              large codebases.
             </p>
             <p class="hero-tagline">AI coding tools forget everything. Contorium gives them persistent memory.</p>
             <div class="hero-ctas">
-              <a
-                href="https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance"
-                class="btn btn-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Get started</a
-              >
-              <a href="https://github.com/frankleeeeeee/contorium" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
-                >View on GitHub</a
-              >
+              <a href="#install" class="btn btn-primary">Install extension</a>
+              <a href="mcp/" class="btn btn-ghost">View MCP setup</a>
             </div>
-            <ul class="hero-checks">
-              <li>AI agent memory</li>
-              <li>MCP compatible</li>
-              <li>Claude Code</li>
-              <li>Workspace memory</li>
-              <li>Context compression</li>
-              <li>Long-running workflows</li>
-            </ul>
           </div>
           <div class="dashboard hero-video" aria-label="Product demo video">
             <div class="hero-video-chrome">
@@ -170,45 +154,92 @@
         </div>
       </section>
 
-      <!-- MCP -->
-      <section class="section section-mcp" id="mcp">
+      <!-- Compatibility -->
+      <section class="section" id="compatibility">
+        <div class="container" style="text-align: center">
+          <h2 class="section-title">Works across modern AI coding tools</h2>
+          <p class="section-lead" style="margin-left: auto; margin-right: auto">
+            Use Contorium through VS Code extensions or MCP-compatible AI agents.
+          </p>
+          <div class="compat-grid" aria-label="Compatible platforms">
+            <span class="compat-item">VS Code</span>
+            <span class="compat-item compat-item--muted">Cursor</span>
+            <span class="compat-item">Claude Code</span>
+            <span class="compat-item">MCP</span>
+            <span class="compat-item">Open VSX</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Install -->
+      <section class="section section-mcp" id="install">
+        <div class="container">
+          <h2 class="section-title">Install Contorium</h2>
+          <p class="section-lead">IDE extensions for workspace memory in the editor. MCP runtime for Claude Code agents.</p>
+          <div class="install-grid">
+            <div class="install-col">
+              <h3>IDE extensions</h3>
+              <ul class="install-links">
+                <li>
+                  <a
+                    href="https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >VS Code <span class="install-arrow" aria-hidden="true">→</span></a
+                  >
+                </li>
+                <li class="install-empty">Cursor — coming soon</li>
+                <li>
+                  <a
+                    href="https://open-vsx.org/?search=contorium&sortBy=relevance&sortOrder=desc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open VSX <span class="install-arrow" aria-hidden="true">→</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="install-col">
+              <h3>MCP / agent runtime</h3>
+              <ul class="install-links">
+                <li>
+                  <a href="mcp/#claude-code">Claude Code <span class="install-arrow" aria-hidden="true">→</span></a>
+                </li>
+                <li>
+                  <a href="mcp/">MCP setup <span class="install-arrow" aria-hidden="true">→</span></a>
+                </li>
+                <li>
+                  <a href="mcp/#build">Local MCP server <span class="install-arrow" aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MCP teaser -->
+      <section class="section section-mcp-teaser">
         <div class="container two-col">
           <div>
-            <span class="section-badge">MCP compatible</span>
-            <h2 class="section-title">Works with modern AI agents</h2>
+            <span class="section-badge">MCP-native AI memory</span>
+            <h2 class="section-title">Claude Code compatible</h2>
             <p class="section-lead" style="margin-bottom: 20px">
-              Contorium exposes persistent workspace memory through MCP-compatible tools—so Claude Code, Cursor, OpenAI
-              agents, and MCP clients can retrieve context on demand.
+              Expose persistent workspace memory through MCP tools—<code>get_workspace_context</code>,
+              <code>store_memory</code>, and more. Setup steps are on the MCP page.
             </p>
-            <ul class="agent-list">
-              <li>Claude Code</li>
-              <li>Cursor</li>
-              <li>OpenAI Agents</li>
-              <li>MCP clients</li>
-              <li>Future agent workflows</li>
-            </ul>
+            <a href="mcp/" class="btn btn-primary">View MCP setup</a>
           </div>
           <div class="code-block">
-            <div class="code-block-header">Quick start (after npm run build:mcp)</div>
-            <pre><code># Build first (repo root)
-npm run build:mcp
-
-# Claude Code — plugin
+            <div class="code-block-header">Claude Code (summary)</div>
+            <pre><code>npm run build:mcp
 claude --plugin-dir .
-
-# Claude Code — MCP only (project scope)
-claude mcp add --scope project contorium \
-  -- node ./packages/mcp/dist/server.js
-
-# Cursor — root mcp.json or MCP settings</code></pre>
+# or: claude mcp add --scope project contorium \
+#   -- node ./packages/mcp/dist/server.js</code></pre>
             <p class="code-block-note">
-              Tools: <code>get_workspace_context</code>, <code>store_memory</code>, <code>search_memory</code>,
-              <code>get_memory</code>. Requires the Contorium extension writing <code>.contora/state.json</code>.
+              <a href="mcp/#claude-code">Full Claude Code guide →</a> ·
+              <a href="docs/MCP.md">docs/MCP.md</a>
             </p>
           </div>
-          <p class="section-cta-inline">
-            <a href="mcp/" class="btn btn-ghost">Full MCP guide — build, Claude Code, Cursor &amp; examples →</a>
-          </p>
         </div>
       </section>
 
@@ -285,7 +316,7 @@ claude mcp add --scope project contorium \
             <article class="card">
               <div class="card-num">05</div>
               <h3>MCP agent tools</h3>
-              <p><code>get_workspace_context</code>, <code>store_memory</code>, <code>search_memory</code>, <code>get_memory</code> for Claude Code and Cursor Agent.</p>
+              <p><code>get_workspace_context</code>, <code>store_memory</code>, <code>search_memory</code>, <code>get_memory</code> for Claude Code.</p>
             </article>
             <article class="card">
               <div class="card-num">06</div>
@@ -374,17 +405,14 @@ claude mcp add --scope project contorium \
       </section>
 
       <!-- CTA -->
-      <section class="cta-band" id="install">
-        <h2>Give your AI agents long-term memory</h2>
-        <p>Install for VS Code / Cursor, connect via MCP, or read the setup guide.</p>
+      <section class="cta-band">
+        <h2>Stop rebuilding AI context every session</h2>
+        <p>Start building with persistent workspace memory.</p>
         <div class="cta-buttons">
-          <a href="docs/" class="btn btn-primary">Installation guide</a>
-          <a href="mcp/" class="btn btn-ghost">MCP setup</a>
-          <a href="https://github.com/frankleeeeeee/contorium" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
-            >GitHub</a
-          >
+          <a href="#install" class="btn btn-primary">Install extension</a>
+          <a href="mcp/" class="btn btn-ghost">View MCP setup</a>
         </div>
-        <p class="cta-note">Persistent memory · MCP compatible · Claude Code · Cursor · Local-first</p>
+        <p class="cta-note">MCP memory · Claude Code · Workspace memory · Local-first</p>
       </section>
     </main>
 
@@ -410,6 +438,7 @@ claude mcp add --scope project contorium \
               <ul>
                 <li><a href="#demo">Demo</a></li>
                 <li><a href="#how">How it works</a></li>
+                <li><a href="#install">Install</a></li>
                 <li><a href="mcp/">MCP</a></li>
                 <li><a href="architecture/">Architecture</a></li>
                 <li><a href="docs/">Docs</a></li>
@@ -428,6 +457,14 @@ claude mcp add --scope project contorium \
                     target="_blank"
                     rel="noopener noreferrer"
                     >VS Marketplace</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://open-vsx.org/?search=contorium&sortBy=relevance&sortOrder=desc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open VSX</a
                   >
                 </li>
                 <li>

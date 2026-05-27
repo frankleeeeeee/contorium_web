@@ -37,5 +37,6 @@ Visit `http://localhost:8080` — subpages at `/mcp/`, `/architecture/`, `/docs/
 ## Related links
 
 - **Repository:** [github.com/frankleeeeeee/contora](https://github.com/frankleeeeeee/contora)
-- **VS Marketplace:** search “contorium” in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/vscode)
+- **VS Marketplace:** [marketplace.visualstudio.com](https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance)
+- **Open VSX:** [open-vsx.org](https://open-vsx.org/?search=contorium&sortBy=relevance&sortOrder=desc)
 - **MCP docs:** [docs/MCP.md](docs/MCP.md)
