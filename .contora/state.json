@@ -19,15 +19,8 @@
   "gitStaged": [],
   "gitWorking": [
     ".contora/events/sess_mpnvvwgi_df99e763.jsonl",
-    ".contora/state.json",
-    "README.md",
-    "architecture/index.html",
-    "blog/index.html",
-    "docs/index.html",
-    "index.html",
-    "mcp/README.md",
-    "mcp/index.html"
+    ".contora/state.json"
   ],
   "notes": "",
-  "lastUpdated": 1779894876904
+  "lastUpdated": 1779894994833
 }
