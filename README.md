@@ -1,32 +1,41 @@
-# contorium Web
+# Contorium Web
 
-Static marketing site for **contorium** — a persistent memory layer for AI-assisted coding in [VS Code](https://code.visualstudio.com/) and [Cursor](https://cursor.com/). The page explains workspace awareness, Git context, session recovery, and local-first behavior, and links to the extension and source repository.
+Static marketing site for **Contorium** — persistent workspace memory for AI coding agents. Covers MCP integration, memory engine architecture, installation, and product positioning.
 
-## Contents
+## Site structure
 
-| File        | Role                                      |
-| ----------- | ----------------------------------------- |
-| `index.html` | Page structure, copy, and inline scripts |
-| `styles.css` | Layout and visual styling                |
-| `logo.png`   | Favicon and header logo (referenced in HTML) |
+| Path | Page |
+| ---- | ---- |
+| `index.html` | Home — hero, problem, demo, how it works, MCP overview, memory, features |
+| `mcp/` | MCP setup per [docs/MCP.md](docs/MCP.md) and [mcp/README.md](mcp/README.md) |
+| `architecture/` | Memory engine pipeline and `.contora/` layout |
+| `docs/` | Extension install, MCP quick start, BYOK |
+| `blog/` | Planned articles (AI memory, MCP, agent workflows) |
 
-No build step or package manager is required.
+## Files
+
+| File | Role |
+| ---- | ---- |
+| `index.html` | Home page |
+| `styles.css` | Shared layout and styling |
+| `logo.png` | Favicon and header logo |
+| `contorium.mp4` | Hero demo video |
+| `docs/MCP.md` | MCP reference (tools, build, Claude Code, Cursor) |
+
+No build step required.
 
 ## Preview locally
 
-Open `index.html` in a browser, or serve the folder so asset paths and fonts behave like production:
-
 ```bash
-# Python 3
 python -m http.server 8080
-
-# Node (npx)
+# or
 npx --yes serve .
 ```
 
-Then visit `http://localhost:8080` (port may vary with `serve`).
+Visit `http://localhost:8080` — subpages at `/mcp/`, `/architecture/`, `/docs/`, `/blog/`.
 
 ## Related links
 
-- **Extension repository:** [github.com/frankleeeeeee/contorium](https://github.com/frankleeeeeee/contorium)
-- **VS Marketplace:** search for “contorium” in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/vscode) to install the extension.
+- **Repository:** [github.com/frankleeeeeee/contora](https://github.com/frankleeeeeee/contora)
+- **VS Marketplace:** search “contorium” in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/vscode)
+- **MCP docs:** [docs/MCP.md](docs/MCP.md)

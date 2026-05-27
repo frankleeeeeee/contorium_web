@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contorium — persistent memory layer for AI coding/.Workspace awareness, Git context, session recovery, and local-first architecture for VS Code and Cursor."
+      content="Contorium — persistent workspace memory for AI coding agents. MCP-compatible memory layer for Claude, Cursor, GPT, and long-running agent workflows."
     />
-    <title>Contorium — Persistent Memory for AI Coding</title>
+    <title>Contorium — Persistent Workspace Memory for AI Agents</title>
     <link rel="icon" href="logo.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,20 +28,23 @@
             height="36"
             alt="Contorium logo: letter C with blue-to-magenta arc on cyan-to-purple circle"
           />
-          CONTORIUM
+          Contorium
         </a>
         <div class="nav-links">
-          <a href="#memory">Memory</a>
-          <a href="#features">Features</a>
+          <a href="#problem">Problem</a>
+          <a href="#demo">Demo</a>
           <a href="#how">How it works</a>
-          <a href="#install">Install</a>
+          <a href="mcp/">MCP</a>
+          <a href="architecture/">Architecture</a>
+          <a href="docs/">Docs</a>
+          <a href="blog/">Blog</a>
           <a href="https://github.com/frankleeeeeee/contorium" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a
             href="https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-primary btn-sm"
-            >Download</a
+            >Get started</a
           >
         </div>
       </nav>
@@ -52,36 +55,38 @@
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <span class="hero-badge">AI IDE persistent memory</span>
-            <h1>Persistent Memory for AI Coding</h1>
+            <span class="hero-badge">AI Agent Memory Infrastructure</span>
+            <h1>Persistent Memory for AI Coding Agents</h1>
             <p class="hero-lead">
-              Contorium gives AI a continuous understanding of your workspace, goals, and coding sessions—so context survives
-              chat switches, model changes, and restarts.
+              Contorium gives Claude, Cursor, GPT, and AI coding agents long-term workspace memory—active files, Git
+              changes, project goals, and sessions tracked automatically across chats, model switches, and IDE restarts.
             </p>
+            <p class="hero-tagline">AI coding tools forget everything. Contorium gives them persistent memory.</p>
             <div class="hero-ctas">
               <a
                 href="https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance"
                 class="btn btn-primary"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Download extension</a
+                >Get started</a
               >
               <a href="https://github.com/frankleeeeeee/contorium" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
                 >View on GitHub</a
               >
             </div>
             <ul class="hero-checks">
-              <li>Git-aware</li>
-              <li>Session recovery</li>
+              <li>AI agent memory</li>
+              <li>MCP compatible</li>
+              <li>Claude Code</li>
+              <li>Workspace memory</li>
               <li>Context compression</li>
-              <li>Local-first</li>
-              <li>BYOK supported</li>
+              <li>Long-running workflows</li>
             </ul>
           </div>
           <div class="dashboard hero-video" aria-label="Product demo video">
             <div class="hero-video-chrome">
               <span class="hero-video-dots" aria-hidden="true"><span></span><span></span><span></span></span>
-              <span class="hero-video-path">.contorium / preview</span>
+              <span class="hero-video-path">.contora / workspace memory</span>
             </div>
             <div class="hero-video-frame">
               <video src="contorium.mp4" autoplay loop muted playsinline></video>
@@ -90,23 +95,140 @@
         </div>
       </section>
 
-      <!-- AI Memory Showcase -->
+      <!-- Problem -->
+      <section class="section section-problem" id="problem">
+        <div class="container">
+          <h2 class="section-title">Every AI coding session starts over</h2>
+          <div class="problem-memory-lines">
+            <p>AI has short-term memory.</p>
+            <p>Contorium adds long-term workspace memory.</p>
+          </div>
+          <ul class="problem-list">
+            <li>Lost context between chats and sessions</li>
+            <li>Repeated explanations of the same codebase</li>
+            <li>Rebuilding prompts from scratch</li>
+            <li>Forgotten Git changes and active files</li>
+            <li>Broken long-running workflows across model switches</li>
+          </ul>
+          <p class="problem-closer">
+            <strong>AI keeps forgetting everything.</strong> Contorium is the persistent memory layer your agents are
+            missing.
+          </p>
+        </div>
+      </section>
+
+      <!-- Demo: Without / With -->
+      <section class="section" id="demo">
+        <div class="container">
+          <h2 class="section-title">See the difference</h2>
+          <p class="section-lead">Same workspace. With Contorium, your agent already knows what matters.</p>
+          <div class="demo-compare">
+            <article class="demo-panel demo-panel--without">
+              <div class="demo-panel-label">Without Contorium</div>
+              <div class="demo-chat">
+                <span class="demo-role">AI</span>
+                <p>“What were you working on?”</p>
+              </div>
+            </article>
+            <article class="demo-panel demo-panel--with">
+              <div class="demo-panel-label">With Contorium</div>
+              <div class="demo-chat">
+                <span class="demo-role">AI</span>
+                <p>You were refactoring the payment retry system.</p>
+                <p class="demo-detail"><strong>Recent files:</strong></p>
+                <ul class="demo-files">
+                  <li>retry.ts</li>
+                  <li>payment.ts</li>
+                </ul>
+                <p class="demo-detail"><strong>Recent Git changes:</strong></p>
+                <ul class="demo-files">
+                  <li>retry classification update</li>
+                  <li>duplicate request fix</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section class="section" id="how">
+        <div class="container">
+          <h2 class="section-title">How it works</h2>
+          <p class="section-lead">From raw workspace activity to structured memory your agents can use.</p>
+          <div class="flow flow-vertical">
+            <div class="flow-step">Workspace activity</div>
+            <span class="flow-arrow flow-arrow--down" aria-hidden="true">↓</span>
+            <div class="flow-step">Workspace scanner</div>
+            <span class="flow-arrow flow-arrow--down" aria-hidden="true">↓</span>
+            <div class="flow-step">Memory compression</div>
+            <span class="flow-arrow flow-arrow--down" aria-hidden="true">↓</span>
+            <div class="flow-step flow-step--highlight">Structured workspace memory</div>
+            <span class="flow-arrow flow-arrow--down" aria-hidden="true">↓</span>
+            <div class="flow-step flow-step--agents">Claude · Cursor · GPT · Agents</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MCP -->
+      <section class="section section-mcp" id="mcp">
+        <div class="container two-col">
+          <div>
+            <span class="section-badge">MCP compatible</span>
+            <h2 class="section-title">Works with modern AI agents</h2>
+            <p class="section-lead" style="margin-bottom: 20px">
+              Contorium exposes persistent workspace memory through MCP-compatible tools—so Claude Code, Cursor, OpenAI
+              agents, and MCP clients can retrieve context on demand.
+            </p>
+            <ul class="agent-list">
+              <li>Claude Code</li>
+              <li>Cursor</li>
+              <li>OpenAI Agents</li>
+              <li>MCP clients</li>
+              <li>Future agent workflows</li>
+            </ul>
+          </div>
+          <div class="code-block">
+            <div class="code-block-header">Quick start (after npm run build:mcp)</div>
+            <pre><code># Build first (repo root)
+npm run build:mcp
+
+# Claude Code — plugin
+claude --plugin-dir .
+
+# Claude Code — MCP only (project scope)
+claude mcp add --scope project contorium \
+  -- node ./packages/mcp/dist/server.js
+
+# Cursor — root mcp.json or MCP settings</code></pre>
+            <p class="code-block-note">
+              Tools: <code>get_workspace_context</code>, <code>store_memory</code>, <code>search_memory</code>,
+              <code>get_memory</code>. Requires the Contorium extension writing <code>.contora/state.json</code>.
+            </p>
+          </div>
+          <p class="section-cta-inline">
+            <a href="mcp/" class="btn btn-ghost">Full MCP guide — build, Claude Code, Cursor &amp; examples →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Persistent AI Memory -->
       <section class="section" id="memory">
         <div class="container two-col">
           <div>
-            <h2 class="section-title">AI workspace memory, at a glance</h2>
+            <h2 class="section-title">Persistent AI memory</h2>
             <p class="section-lead">
-              Not another chat panel—a structured layer that keeps your project, edits, and intent available to AI across
-              sessions.
+              Contorium continuously builds structured workspace memory—not another chat panel, but infrastructure your
+              agents can rely on across sessions.
             </p>
-            <div class="feature-list">
-              <h3>Current focus</h3>
-              <p>Track what you are working on; surrounding context updates as you move through the codebase.</p>
-              <h3>Workspace awareness</h3>
-              <p>Recent files, Git changes, and active tasks are continuously summarized for smarter prompts.</p>
-              <h3>Session persistence</h3>
-              <p>Close the editor today. Open it tomorrow and pick up without rebuilding context from scratch.</p>
-            </div>
+            <ul class="memory-bullets">
+              <li>Active files and recent edits</li>
+              <li>Git changes and staged paths</li>
+              <li>Coding goals and current focus</li>
+              <li>Compressed context within token budgets</li>
+              <li>Semantic summaries for long workflows</li>
+              <li>Cross-session restore after restarts</li>
+            </ul>
           </div>
           <div class="showcase-visual">
             <div class="memory-row">
@@ -134,124 +256,64 @@
         </div>
       </section>
 
-      <!-- Workflow timeline -->
-      <section class="section">
-        <div class="container">
-          <h2 class="section-title">Workflow timeline</h2>
-          <p class="section-lead">From raw activity to AI-ready memory—lightweight motion, no noisy chrome.</p>
-          <div class="two-col" style="align-items: center">
-            <div class="timeline">
-              <div class="timeline-item">
-                <h4>Open your workspace</h4>
-                <p>Editors, saves, and Git events feed the scanner continuously.</p>
-              </div>
-              <div class="timeline-item">
-                <h4>Set focus &amp; work normally</h4>
-                <p>Memory builders rank files, summarize activity, and respect ignore rules.</p>
-              </div>
-              <div class="timeline-item">
-                <h4>Export or restore</h4>
-                <p>One action produces structured context for your model—or restores session state.</p>
-              </div>
-            </div>
-            <p class="quote" style="margin: 0; border-radius: var(--radius)">
-              <strong>“AI shouldn’t lose context every session.”</strong><br />
-              Contorium keeps a local snapshot so assistants stay aligned with what actually matters.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <!-- Features -->
       <section class="section" id="features">
         <div class="container">
-          <h2 class="section-title">Product features</h2>
-          <p class="section-lead">Everything is workspace-owned, optional BYOK for analysis—no hidden cloud memory.</p>
+          <h2 class="section-title">Built for agent workflows</h2>
+          <p class="section-lead">Workspace-owned memory infrastructure—local-first, optional BYOK, no hidden cloud store.</p>
           <div class="cards">
             <article class="card">
               <div class="card-num">01</div>
-              <h3>AI focus tracking</h3>
-              <p>Manual focus, inferred goals, and short task summaries tied to your current intent.</p>
+              <h3>AI-triggered retrieval</h3>
+              <p>Agents pull workspace memory on demand—focus, files, and summaries without manual copy-paste.</p>
             </article>
             <article class="card">
               <div class="card-num">02</div>
-              <h3>Workspace memory</h3>
-              <p>Active files, recent edits, and Git-aware prioritization in one structured layer.</p>
+              <h3>Cross-session restore</h3>
+              <p>Pick up where you left off after restarts, chat switches, or model changes.</p>
             </article>
             <article class="card">
               <div class="card-num">03</div>
+              <h3>Git-aware summaries</h3>
+              <p>Staged and modified paths surface automatically so attention follows real change.</p>
+            </article>
+            <article class="card">
+              <div class="card-num">04</div>
               <h3>Context compression</h3>
               <p>Semantic summaries, ranked paths, and token-aware exports for long sessions.</p>
             </article>
             <article class="card">
-              <div class="card-num">04</div>
-              <h3>Snapshot recovery</h3>
-              <p>Save workspace state and restore editors alongside active memory blocks.</p>
-            </article>
-            <article class="card">
               <div class="card-num">05</div>
-              <h3>Local-first architecture</h3>
-              <p>State under <code style="color: var(--accent)">.contorium/</code>—you control retention and sharing.</p>
+              <h3>MCP agent tools</h3>
+              <p><code>get_workspace_context</code>, <code>store_memory</code>, <code>search_memory</code>, <code>get_memory</code> for Claude Code and Cursor Agent.</p>
             </article>
             <article class="card">
               <div class="card-num">06</div>
-              <h3>BYOK support</h3>
-              <p>Optional keys for OpenAI, Claude, Gemini, and DeepSeek—stored in the editor secret store, not settings JSON.</p>
+              <h3>Local-first runtime</h3>
+              <p>State under <code style="color: var(--accent)">.contora/</code>—you control retention, sharing, and keys.</p>
+            </article>
+            <article class="card card--future">
+              <div class="card-num">07</div>
+              <h3>Standalone runtime</h3>
+              <p>Headless workspace memory beyond the editor—for CI, agents, and future infrastructure deployments.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- How it works -->
-      <section class="section" id="how">
+      <!-- Keywords -->
+      <section class="keywords-band" aria-label="Core capabilities">
         <div class="container">
-          <h2 class="section-title">How it works</h2>
-          <p class="section-lead">A straight pipeline from activity to structured memory—built for real AI coding workflows.</p>
-          <div class="flow">
-            <div class="flow-step">Workspace activity</div>
-            <span class="flow-arrow" aria-hidden="true">→</span>
-            <div class="flow-step">Scanner</div>
-            <span class="flow-arrow" aria-hidden="true">→</span>
-            <div class="flow-step">Memory builder</div>
-            <span class="flow-arrow" aria-hidden="true">→</span>
-            <div class="flow-step">Compression</div>
-            <span class="flow-arrow" aria-hidden="true">→</span>
-            <div class="flow-step">Export / restore</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Developer experience -->
-      <section class="section">
-        <div class="container">
-          <h2 class="section-title">Developer experience</h2>
-          <p class="section-lead">Built for developers who pair with AI daily—monorepos, refactors, and agent loops included.</p>
-          <div class="dev-block">
-            <p>
-              <strong style="color: var(--text)">“Your coding session now has memory.”</strong>
-              Switch models without rebuilding the same file list and Git story every time.
-            </p>
-            <p>
-              <strong style="color: var(--text)">“Not another AI chat panel.”</strong>
-              A persistent memory layer that reduces token noise and repeated context dumps.
-            </p>
-            <p>
-              <strong style="color: var(--text)">“Contorium continuously maintains AI workspace awareness.”</strong>
-              Ranked priorities, compact history, and exports that match how you actually work.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Git & workspace -->
-      <section class="section">
-        <div class="container">
-          <h2 class="section-title">Git &amp; workspace awareness</h2>
-          <p class="section-lead">Staged and modified files surface automatically—so AI attention follows real change, not static trees.</p>
-          <div class="quotes">
-            <blockquote class="quote">Staged paths and diffs inform ranking before you paste a single path.</blockquote>
-            <blockquote class="quote">Ignore rules and budgets keep large repos usable without drowning models in noise.</blockquote>
-          </div>
+          <p class="keywords-label">Workspace memory runtime</p>
+          <ul class="keywords-list">
+            <li><strong>Persistent Memory</strong></li>
+            <li><strong>AI Agent Memory</strong></li>
+            <li><strong>Workspace Memory</strong></li>
+            <li><strong>MCP Compatible</strong></li>
+            <li>Claude Code</li>
+            <li>Context Compression</li>
+            <li>Long-running AI workflows</li>
+          </ul>
         </div>
       </section>
 
@@ -259,7 +321,7 @@
       <section class="section">
         <div class="container">
           <h2 class="section-title">Why a memory layer?</h2>
-          <p class="section-lead">Compared to ad-hoc copy-paste, Contorium optimizes for continuity and cost.</p>
+          <p class="section-lead">Chat-only flows vs. persistent workspace memory for AI agents.</p>
           <div style="overflow-x: auto">
             <table class="compare-table">
               <thead>
@@ -276,19 +338,29 @@
                   <td class="check-yes">Automatic</td>
                 </tr>
                 <tr>
+                  <td>MCP / agent memory access</td>
+                  <td class="check-partial">Rare</td>
+                  <td class="check-yes">Built-in</td>
+                </tr>
+                <tr>
                   <td>Git-aware prioritization</td>
                   <td class="check-partial">Sometimes</td>
                   <td class="check-yes">Built-in</td>
                 </tr>
                 <tr>
-                  <td>Session restore</td>
+                  <td>Cross-session restore</td>
                   <td class="check-partial">Limited</td>
                   <td class="check-yes">Designed for it</td>
                 </tr>
                 <tr>
-                  <td>Token-efficient exports</td>
+                  <td>Context compression</td>
                   <td class="check-partial">Ad hoc</td>
                   <td class="check-yes">Compression + budgets</td>
+                </tr>
+                <tr>
+                  <td>Long-running AI workflows</td>
+                  <td class="check-partial">Fragile</td>
+                  <td class="check-yes">Cross-session memory</td>
                 </tr>
                 <tr>
                   <td>Local-first data</td>
@@ -303,21 +375,16 @@
 
       <!-- CTA -->
       <section class="cta-band" id="install">
-        <h2>Keep your AI in context</h2>
-        <p>Install from the Visual Studio Marketplace (search “contorium”) or build from source on GitHub.</p>
+        <h2>Give your AI agents long-term memory</h2>
+        <p>Install for VS Code / Cursor, connect via MCP, or read the setup guide.</p>
         <div class="cta-buttons">
-          <a
-            href="https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Install for VS Code</a
-          >
+          <a href="docs/" class="btn btn-primary">Installation guide</a>
+          <a href="mcp/" class="btn btn-ghost">MCP setup</a>
           <a href="https://github.com/frankleeeeeee/contorium" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
-            >Open GitHub</a
+            >GitHub</a
           >
         </div>
-        <p class="cta-note">Supports Cursor, VS Code, local runtime, and optional BYOK providers.</p>
+        <p class="cta-note">Persistent memory · MCP compatible · Claude Code · Cursor · Local-first</p>
       </section>
     </main>
 
@@ -333,22 +400,25 @@
                 height="36"
                 alt="Contorium logo: letter C with blue-to-magenta arc on cyan-to-purple circle"
               />
-              CONTORIUM
+              Contorium
             </a>
-            <p>Persistent workspace memory for AI-native development—local, structured, and session-aware.</p>
+            <p>Persistent workspace memory for AI agents—local, structured, MCP-compatible, and session-aware.</p>
           </div>
           <div class="footer-links">
             <div class="footer-col">
               <h4>Product</h4>
               <ul>
-                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
                 <li><a href="#how">How it works</a></li>
-                <li><a href="#install">Install</a></li>
+                <li><a href="mcp/">MCP</a></li>
+                <li><a href="architecture/">Architecture</a></li>
+                <li><a href="docs/">Docs</a></li>
               </ul>
             </div>
             <div class="footer-col">
               <h4>Resources</h4>
               <ul>
+                <li><a href="blog/">Blog</a></li>
                 <li>
                   <a href="https://github.com/frankleeeeeee/contorium" target="_blank" rel="noopener noreferrer">GitHub repository</a>
                 </li>
@@ -368,11 +438,10 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© contorium. MIT License.</span>
-          <span>Memory · Focus · Context · Persistence</span>
+          <span>© Contorium. MIT License.</span>
+          <span>Agent Memory · MCP · Workspace · Persistence</span>
         </div>
       </div>
     </footer>
-
   </body>
 </html>

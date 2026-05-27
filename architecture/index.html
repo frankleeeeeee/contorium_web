@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contorium memory engine architecture — workspace scanner, compression, structured memory, and local-first .contora runtime."
+    />
+    <title>Architecture — Contorium Workspace Memory Runtime</title>
+    <link rel="icon" href="../logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-inner" aria-label="Primary">
+        <a href="../index.html" class="logo">
+          <img class="logo-img" src="../logo.png" width="36" height="36" alt="Contorium" />
+          Contorium
+        </a>
+        <div class="nav-links">
+          <a href="../index.html#problem">Problem</a>
+          <a href="../index.html#demo">Demo</a>
+          <a href="../index.html#how">How it works</a>
+          <a href="../mcp/">MCP</a>
+          <a href="index.html" class="nav-active">Architecture</a>
+          <a href="../docs/">Docs</a>
+          <a href="../blog/">Blog</a>
+          <a href="https://github.com/frankleeeeeee/contorium" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="../docs/" class="btn btn-primary btn-sm">Get started</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <header class="page-hero">
+        <div class="container">
+          <span class="section-badge">Workspace Memory Runtime</span>
+          <h1>Memory engine architecture</h1>
+          <p class="page-hero-lead">
+            Contorium is AI memory infrastructure—not a chat UI. A local pipeline turns workspace activity into structured,
+            compressed memory your agents can retrieve across sessions.
+          </p>
+        </div>
+      </header>
+
+      <section class="page-section">
+        <div class="container">
+          <h2>Pipeline</h2>
+          <p>From raw editor and Git events to agent-ready context.</p>
+          <div class="arch-diagram">
+            <span class="arch-box">Workspace activity</span>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <span class="arch-box">Workspace scanner</span>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <span class="arch-box">Memory builder</span>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <span class="arch-box">Memory compression</span>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <span class="arch-box" style="border-color: rgba(91, 167, 255, 0.4); background: var(--accent-soft)">Structured workspace memory</span>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <span class="arch-box" style="border-color: rgba(124, 92, 255, 0.35)">Claude · Cursor · GPT · Agents</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section section-mcp">
+        <div class="container two-col">
+          <div>
+            <h2>Workspace scanner</h2>
+            <p>Continuously observes editors, saves, focus changes, and Git events. Respects ignore rules and repo size budgets so large monorepos stay usable.</p>
+            <h2 style="margin-top: 32px">Memory builder</h2>
+            <p>Ranks active files, infers goals, attaches Git context, and writes structured blocks—not raw file dumps—for downstream compression and export.</p>
+          </div>
+          <div>
+            <h2>Memory compression</h2>
+            <p>Semantic summaries, ranked paths, and token-aware exports keep long-running AI workflows within budget without losing what matters.</p>
+            <h2 style="margin-top: 32px">Export &amp; restore</h2>
+            <p>One action produces markdown or JSON context for agents—or restores session state, editors, and memory blocks after a restart.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="container two-col">
+          <div>
+            <h2>Local-first: <code style="color: var(--accent)">.contora/</code></h2>
+            <p>All state lives in your workspace. No hidden cloud memory store—you control retention, sharing, and optional BYOK analysis keys.</p>
+            <pre class="dir-tree" aria-label=".contora directory layout"><span class="dir-highlight">&lt;workspace-root&gt;/</span>
+├── .contoraignore
+└── .contora/
+    ├── state.json       <span class="dir-highlight"># extension snapshot (MCP reads)</span>
+    ├── events/
+    ├── last-intent.json
+    ├── memory/
+    └── mcp/
+        └── memories.json <span class="dir-highlight"># MCP store_memory</span></pre>
+          </div>
+          <div>
+            <h2>Design principles</h2>
+            <ul class="memory-bullets">
+              <li><strong style="color: var(--text)">AI-triggered retrieval</strong> — agents pull memory via MCP or export, not manual paste</li>
+              <li><strong style="color: var(--text)">Cross-session restore</strong> — memory survives chat switches and IDE restarts</li>
+              <li><strong style="color: var(--text)">Git-aware summaries</strong> — staged and modified paths drive ranking</li>
+              <li><strong style="color: var(--text)">Agent export formats</strong> — markdown, json, cursor, claude, openai</li>
+              <li><strong style="color: var(--text)">Standalone runtime</strong> — future headless mode beyond the editor</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <h2>See it in action</h2>
+        <p>Connect agents via MCP or install the extension to start building workspace memory.</p>
+        <div class="cta-buttons">
+          <a href="../mcp/" class="btn btn-primary">MCP integration</a>
+          <a href="../docs/" class="btn btn-ghost">Install docs</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="../index.html" class="logo">
+              <img class="logo-img" src="../logo.png" width="36" height="36" alt="Contorium" />
+              Contorium
+            </a>
+            <p>Workspace memory runtime for AI agents—local, structured, session-aware.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Product</h4>
+              <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Architecture</a></li>
+                <li><a href="../mcp/">MCP</a></li>
+                <li><a href="../docs/">Docs</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="../blog/">Blog</a></li>
+                <li><a href="https://github.com/frankleeeeeee/contorium" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© Contorium. MIT License.</span>
+          <span>Memory Engine · Local-first · Agents</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

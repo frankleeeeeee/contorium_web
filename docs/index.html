@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Install Contorium — persistent workspace memory for VS Code, Cursor, and AI agents. Extension setup, MCP, and BYOK configuration."
+    />
+    <title>Docs — Install Contorium</title>
+    <link rel="icon" href="../logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-inner" aria-label="Primary">
+        <a href="../index.html" class="logo">
+          <img class="logo-img" src="../logo.png" width="36" height="36" alt="Contorium" />
+          Contorium
+        </a>
+        <div class="nav-links">
+          <a href="../index.html#problem">Problem</a>
+          <a href="../index.html#demo">Demo</a>
+          <a href="../index.html#how">How it works</a>
+          <a href="../mcp/">MCP</a>
+          <a href="../architecture/">Architecture</a>
+          <a href="index.html" class="nav-active">Docs</a>
+          <a href="../blog/">Blog</a>
+          <a href="https://github.com/frankleeeeeee/contorium" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a
+            href="https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary btn-sm"
+            >Install</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <header class="page-hero">
+        <div class="container">
+          <h1>Installation &amp; setup</h1>
+          <p class="page-hero-lead">
+            Give Claude, Cursor, and AI coding agents long-term memory across sessions, model switches, and large
+            codebases—starting with the Contorium extension and optional MCP connection.
+          </p>
+        </div>
+      </header>
+
+      <section class="page-section">
+        <div class="container">
+          <h2>Install the extension</h2>
+          <ol class="steps-list">
+            <li>
+              <strong>VS Code or Cursor</strong>
+              Install the <strong>Contorium</strong> VSIX (<code>npm run vsix</code> from source), or search “contorium” in Extensions, or install from the
+              <a href="https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance" target="_blank" rel="noopener noreferrer">Visual Studio Marketplace</a>.
+            </li>
+            <li>
+              <strong>Open your project</strong>
+              Contorium begins scanning workspace activity—edits, focus, and Git events—into <code style="color: var(--accent)">.contora/</code>.
+            </li>
+            <li>
+              <strong>Set your focus (optional)</strong>
+              Tell Contorium what you are working on; memory builders rank files and summaries around that intent.
+            </li>
+            <li>
+              <strong>Work normally</strong>
+              Memory updates continuously. Export context for agents or restore sessions when you return.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="page-section section-mcp">
+        <div class="container">
+          <h2>Connect via MCP</h2>
+          <p>
+            The MCP server (<code style="color: var(--accent)">packages/mcp/dist/server.js</code>) exposes agent tools for
+            Claude Code and Cursor Agent. It works <strong>alongside</strong> the extension—install the sidebar extension first so
+            <code style="color: var(--accent)">.contora/state.json</code> is populated.
+          </p>
+          <div class="code-block" style="max-width: 560px">
+            <div class="code-block-header">Build MCP (repo root)</div>
+            <pre><code>npm run build:mcp</code></pre>
+          </div>
+          <div class="code-block" style="max-width: 640px; margin-top: 12px">
+            <div class="code-block-header">Claude Code — plugin</div>
+            <pre><code>claude --plugin-dir .</code></pre>
+          </div>
+          <div class="code-block" style="max-width: 640px; margin-top: 12px">
+            <div class="code-block-header">Claude Code — MCP only (project scope)</div>
+            <pre><code>claude mcp add --scope project contorium \
+  -- node ./packages/mcp/dist/server.js</code></pre>
+          </div>
+          <p class="section-cta-inline">
+            <a href="../docs/MCP.md" class="btn btn-ghost btn-sm">docs/MCP.md</a>
+            <a href="../mcp/" class="btn btn-ghost btn-sm">Full MCP guide →</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="container two-col">
+          <div>
+            <h2>Build from source</h2>
+            <p>Clone the repository, install dependencies, and compile the extension.</p>
+            <div class="code-block">
+              <pre><code>git clone https://github.com/frankleeeeeee/contorium.git
+cd contorium
+npm install
+npm run compile</code></pre>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 12px">
+              Press <code>F5</code> in VS Code to launch Extension Development Host. Package a VSIX with
+              <code>npm run vsix</code> for manual install (Extensions → Install from VSIX…).
+            </p>
+          </div>
+          <div>
+            <h2>Optional: BYOK</h2>
+            <p>Contorium is local-first. For semantic analysis you can optionally provide your own API keys (OpenAI, Claude, Gemini, DeepSeek)—stored in the editor secret store, not settings JSON.</p>
+            <ul class="memory-bullets">
+              <li>No hidden cloud memory</li>
+              <li>Workspace-owned <code style="color: var(--accent)">.contora/</code> data</li>
+              <li>Keys never committed to the repo</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="container">
+          <h2>Verify it works</h2>
+          <ul class="memory-bullets">
+            <li>Check that <code style="color: var(--accent)">.contora/state.json</code> appears after editing files</li>
+            <li>Set a focus and confirm ranked files update in memory</li>
+            <li>Export context via sidebar (<code>exportFormat</code>: markdown, json, cursor, claude, openai)—or call MCP <code>get_workspace_context</code></li>
+            <li>Restart the IDE and use session restore to pick up where you left off</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <h2>Ready to give your agents memory?</h2>
+        <div class="cta-buttons">
+          <a
+            href="https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Install extension</a
+          >
+          <a href="../mcp/" class="btn btn-ghost">MCP setup</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="../index.html" class="logo">
+              <img class="logo-img" src="../logo.png" width="36" height="36" alt="Contorium" />
+              Contorium
+            </a>
+            <p>Install, configure, and connect Contorium to your AI coding workflow.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Product</h4>
+              <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../mcp/">MCP</a></li>
+                <li><a href="../architecture/">Architecture</a></li>
+                <li><a href="index.html">Docs</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="../blog/">Blog</a></li>
+                <li><a href="https://github.com/frankleeeeeee/contorium" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© Contorium. MIT License.</span>
+          <span>Install · MCP · Local-first</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

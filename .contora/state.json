@@ -2,7 +2,8 @@
   "sessionId": "sess_mp487yx1_2450523b",
   "currentTask": "Buid Conora landing page",
   "openFiles": [
-    "index.html"
+    "index.html",
+    "README.md"
   ],
   "recentFiles": [],
   "gitStaged": [],
@@ -11,5 +12,5 @@
     ".contora/state.json"
   ],
   "notes": "",
-  "lastUpdated": 1779417445754
+  "lastUpdated": 1779442548526
 }
