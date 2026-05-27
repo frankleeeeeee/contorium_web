@@ -3,10 +3,9 @@
   "currentTask": "",
   "openFiles": [
     "index.html",
+    "README.md",
     "修改方案2.md",
     "修改方案.md",
-    "README.md",
-    ".contora/events/sess_mp487yx1_2450523b.jsonl",
     "docs/index.html",
     "mcp/index.html",
     "blog/index.html",
@@ -19,11 +18,16 @@
   ],
   "gitStaged": [],
   "gitWorking": [
-    ".contora/events/sess_mp487yx1_2450523b.jsonl",
+    ".contora/events/sess_mpnvvwgi_df99e763.jsonl",
     ".contora/state.json",
     "README.md",
-    ".contora/events/sess_mpnvvwgi_df99e763.jsonl"
+    "architecture/index.html",
+    "blog/index.html",
+    "docs/index.html",
+    "index.html",
+    "mcp/README.md",
+    "mcp/index.html"
   ],
   "notes": "",
-  "lastUpdated": 1779875475235
+  "lastUpdated": 1779894876904
 }

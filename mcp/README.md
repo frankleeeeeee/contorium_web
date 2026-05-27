@@ -483,9 +483,9 @@ Extensions → Install from VSIX…
 ## From source
 
 ```bash
-git clone https://github.com/frankleeeeeee/contora.git
+git clone https://github.com/ContoriumLabs/contorium.git
 
-cd contora
+cd contorium
 
 npm install
 
