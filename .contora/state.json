@@ -4,9 +4,9 @@
   "openFiles": [
     "index.html",
     "README.md",
-    "修改方案2.md",
     "修改方案.md",
     "docs/index.html",
+    "修改方案2.md",
     "mcp/index.html",
     "blog/index.html",
     "architecture/index.html"
@@ -22,14 +22,9 @@
     ".contora/events/sess_mpnvvwgi_df99e763.jsonl",
     ".contora/state.json",
     "README.md",
-    "architecture/index.html",
-    "blog/index.html",
-    "docs/index.html",
     "index.html",
-    "mcp/index.html",
-    "styles.css",
-    "修改方案2.md"
+    "styles.css"
   ],
   "notes": "",
-  "lastUpdated": 1779945685034
+  "lastUpdated": 1779947247547
 }

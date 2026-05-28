@@ -1,12 +1,12 @@
 # Contorium Web
 
-Static marketing site for **Contorium** — category-defining AI coding runtime layer (v2.1). One concept, three states, aggressive differentiation—plus install and MCP setup docs.
+Static marketing site for **Contorium** — FINAL category ownership version. Locks **runtime continuity layer** as the single definition; install and MCP docs unchanged.
 
 ## Site structure
 
 | Path | Page |
 | ---- | ---- |
-| `index.html` | Home — category strip, 3 capabilities, differentiation, before/after, install, MCP |
+| `index.html` | Home — category claim, category war, core model, before/after, positioning, install, MCP |
 | `mcp/` | MCP setup per [docs/MCP.md](docs/MCP.md) and [mcp/README.md](mcp/README.md) |
 | `architecture/` | Memory engine pipeline and `.contora/` layout |
 | `docs/` | Extension install, MCP quick start, BYOK |
