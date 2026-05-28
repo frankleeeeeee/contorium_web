@@ -186,6 +186,11 @@ img {
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
+  background:
+    linear-gradient(rgba(59, 130, 232, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 232, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background-size: 48px 48px, 48px 48px, auto;
 }
 
 .hero::before {
@@ -239,6 +244,36 @@ img {
   color: var(--text-muted);
   margin: 0 0 16px;
   max-width: 520px;
+}
+
+.hero-lead--secondary {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.hero-continuity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: grid;
+  gap: 8px;
+  max-width: 520px;
+}
+
+.hero-continuity-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.95rem;
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+
+.hero-continuity-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .hero-tagline {
@@ -521,6 +556,14 @@ img {
   font-size: 1.05rem;
   max-width: 640px;
   margin: 0 0 40px;
+}
+
+.section-sublead {
+  color: var(--text);
+  font-size: 0.95rem;
+  max-width: 640px;
+  margin: -24px 0 28px;
+  font-weight: 500;
 }
 
 .section-badge {

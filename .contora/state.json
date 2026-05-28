@@ -5,7 +5,6 @@
     "index.html",
     "README.md",
     "修改方案2.md",
-    "mcp/README.md",
     "修改方案.md",
     "docs/index.html",
     "mcp/index.html",
@@ -22,9 +21,11 @@
   "gitWorking": [
     ".contora/events/sess_mpnvvwgi_df99e763.jsonl",
     ".contora/state.json",
-    "architecture/index.html",
+    "README.md",
+    "blog/index.html",
+    "index.html",
     "styles.css"
   ],
   "notes": "",
-  "lastUpdated": 1779933037307
+  "lastUpdated": 1779943224702
 }
