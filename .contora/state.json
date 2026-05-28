@@ -22,16 +22,9 @@
   "gitWorking": [
     ".contora/events/sess_mpnvvwgi_df99e763.jsonl",
     ".contora/state.json",
-    "README.md",
     "architecture/index.html",
-    "docs/MCP.md",
-    "docs/index.html",
-    "index.html",
-    "mcp/README.md",
-    "mcp/index.html",
-    "styles.css",
-    "修改方案2.md"
+    "styles.css"
   ],
   "notes": "",
-  "lastUpdated": 1779932735328
+  "lastUpdated": 1779933037307
 }
