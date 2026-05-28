@@ -44,24 +44,35 @@
 
     <main>
       <!-- Hero -->
-      <section class="hero hero-centered">
-        <div class="container hero-centered-inner">
-          <h1>Runtime continuity for AI coding agents</h1>
-          <p class="hero-lead">
-            Contorium keeps your AI coding assistants continuously aware of your workspace — across sessions, tools,
-            and models.
-          </p>
-          <p class="hero-tagline">No more lost context. No more starting over.</p>
-          <div class="hero-ctas">
-            <a href="#install" class="btn btn-primary">Install extension</a>
-            <a href="docs/" class="btn btn-ghost">Get started</a>
-            <a
-              href="https://github.com/ContoriumLabs/contorium"
-              class="btn btn-ghost"
-              target="_blank"
-              rel="noopener noreferrer"
-              >View on GitHub</a
-            >
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1>Runtime continuity for AI coding agents</h1>
+            <p class="hero-lead">
+              Contorium keeps your AI coding assistants continuously aware of your workspace — across sessions, tools,
+              and models.
+            </p>
+            <p class="hero-tagline">No more lost context. No more starting over.</p>
+            <div class="hero-ctas">
+              <a href="#install" class="btn btn-primary">Install extension</a>
+              <a href="docs/" class="btn btn-ghost">Get started</a>
+              <a
+                href="https://github.com/ContoriumLabs/contorium"
+                class="btn btn-ghost"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View on GitHub</a
+              >
+            </div>
+          </div>
+          <div class="dashboard hero-video" aria-label="Product demo video">
+            <div class="hero-video-chrome">
+              <span class="hero-video-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span class="hero-video-path">.contora / runtime state</span>
+            </div>
+            <div class="hero-video-frame">
+              <video src="contorium.mp4" autoplay loop muted playsinline></video>
+            </div>
           </div>
         </div>
       </section>
@@ -273,14 +284,16 @@ claude --plugin-dir .</code></pre>
 
       <!-- Final CTA -->
       <section class="cta-band">
-        <p class="final-statement">
-          Contorium is a runtime continuity layer that keeps AI coding agents aligned with your active workspace across
-          sessions and tools.
-        </p>
-        <h2>Keep your AI coding workspace continuously alive</h2>
-        <div class="cta-buttons">
-          <a href="#install" class="btn btn-primary">Install extension</a>
-          <a href="docs/" class="btn btn-ghost">Get started</a>
+        <div class="container cta-band-inner">
+          <h2>Keep your AI coding workspace continuously alive</h2>
+          <p class="final-statement">
+            Contorium is a runtime continuity layer that keeps AI coding agents aligned with your active workspace across
+            sessions and tools.
+          </p>
+          <div class="cta-buttons">
+            <a href="#install" class="btn btn-primary">Install extension</a>
+            <a href="docs/" class="btn btn-ghost">Get started</a>
+          </div>
         </div>
       </section>
     </main>
