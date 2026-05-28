@@ -22,10 +22,14 @@
     ".contora/events/sess_mpnvvwgi_df99e763.jsonl",
     ".contora/state.json",
     "README.md",
+    "architecture/index.html",
     "blog/index.html",
+    "docs/index.html",
     "index.html",
-    "styles.css"
+    "mcp/index.html",
+    "styles.css",
+    "修改方案2.md"
   ],
   "notes": "",
-  "lastUpdated": 1779943224702
+  "lastUpdated": 1779944424740
 }

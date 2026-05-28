@@ -1,12 +1,12 @@
 # Contorium Web
 
-Static marketing site for **Contorium** — AI runtime continuity infrastructure for coding agents (Cursor, Claude Code, Codex, MCP). Positioned as runtime memory infrastructure, not a generic memory plugin.
+Static marketing site for **Contorium** — runtime continuity for AI coding agents. Production landing page: one concept, three capabilities, one differentiation—plus install and MCP setup docs.
 
 ## Site structure
 
 | Path | Page |
 | ---- | ---- |
-| `index.html` | Home — runtime continuity, lifecycle awareness, infrastructure features, install, MCP |
+| `index.html` | Home — hero, 3 capabilities, differentiation, integrations, install, MCP |
 | `mcp/` | MCP setup per [docs/MCP.md](docs/MCP.md) and [mcp/README.md](mcp/README.md) |
 | `architecture/` | Memory engine pipeline and `.contora/` layout |
 | `docs/` | Extension install, MCP quick start, BYOK |

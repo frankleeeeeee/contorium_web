@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contorium — runtime memory infrastructure for AI coding agents. Workspace runtime continuity for Cursor, Claude Code, Codex, and MCP workflows."
+      content="Contorium — runtime continuity for AI coding agents. Keep your workspace continuously alive across sessions, tools, and models."
     />
-    <title>Contorium — Runtime Memory Infrastructure for AI Agents</title>
+    <title>Contorium — Runtime Continuity for AI Coding Agents</title>
     <link rel="icon" href="logo.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,339 +31,156 @@
           Contorium
         </a>
         <div class="nav-links">
-          <a href="#continuity">Continuity</a>
-          <a href="#why">Why</a>
-          <a href="#features">Infrastructure</a>
-          <a href="#how">How it works</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#integrations">Integrations</a>
           <a href="#install">Install</a>
-          <a href="mcp/">MCP</a>
-          <a href="architecture/">Architecture</a>
           <a href="docs/">Docs</a>
-          <a href="blog/">Blog</a>
+          <a href="mcp/">MCP</a>
           <a href="https://github.com/ContoriumLabs/contorium" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a
-            href="#install"
-            class="btn btn-primary btn-sm"
-            >Install</a
-          >
+          <a href="#install" class="btn btn-primary btn-sm">Install</a>
         </div>
       </nav>
     </header>
 
     <main>
       <!-- Hero -->
-      <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <span class="hero-badge">AI runtime infrastructure</span>
-            <h1>Runtime memory infrastructure for AI coding agents</h1>
-            <p class="hero-lead">AI coding tools lose runtime state constantly.</p>
-            <p class="hero-lead hero-lead--secondary">
-              Contorium maintains persistent workspace continuity across:
-            </p>
-            <ul class="hero-continuity-list">
-              <li>Long coding sessions</li>
-              <li>Model switches</li>
-              <li>IDE restarts</li>
-              <li>Agent workflows</li>
-            </ul>
-            <p class="hero-tagline">
-              So your AI can continue working instead of rebuilding context every session.
-            </p>
-            <div class="hero-ctas">
-              <a href="#install" class="btn btn-primary">Get started</a>
-              <a href="mcp/" class="btn btn-ghost">View MCP setup</a>
-            </div>
-          </div>
-          <div class="dashboard hero-video" aria-label="Product demo video">
-            <div class="hero-video-chrome">
-              <span class="hero-video-dots" aria-hidden="true"><span></span><span></span><span></span></span>
-              <span class="hero-video-path">.contora / runtime state</span>
-            </div>
-            <div class="hero-video-frame">
-              <video src="contorium.mp4" autoplay loop muted playsinline></video>
-            </div>
+      <section class="hero hero-centered">
+        <div class="container hero-centered-inner">
+          <h1>Runtime continuity for AI coding agents</h1>
+          <p class="hero-lead">
+            Contorium keeps your AI coding assistants continuously aware of your workspace — across sessions, tools,
+            and models.
+          </p>
+          <p class="hero-tagline">No more lost context. No more starting over.</p>
+          <div class="hero-ctas">
+            <a href="#install" class="btn btn-primary">Install extension</a>
+            <a href="docs/" class="btn btn-ghost">Get started</a>
+            <a
+              href="https://github.com/ContoriumLabs/contorium"
+              class="btn btn-ghost"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View on GitHub</a
+            >
           </div>
         </div>
       </section>
 
-      <!-- Problem -->
-      <section class="section section-problem" id="problem">
+      <!-- 3 Core Capabilities -->
+      <section class="section" id="capabilities">
         <div class="container">
-          <h2 class="section-title">AI coding tools lose runtime state</h2>
-          <p class="section-lead">
-            Modern assistants are stateless. Every session forces the model to reconstruct project intent, debugging
-            progress, active files, and architectural focus—even with large context windows.
-          </p>
-          <ul class="problem-list">
-            <li>Context drift across long sessions</li>
-            <li>Architectural forgetting between chats</li>
-            <li>Repeated reasoning and workflow fragmentation</li>
-            <li>Token waste rebuilding workspace context</li>
-            <li>Session resets on IDE restarts and model switches</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Runtime continuity -->
-      <section class="section" id="continuity">
-        <div class="container">
-          <h2 class="section-title">Runtime continuity, not static memory</h2>
-          <p class="section-lead">
-            Most AI memory systems retrieve old information. Contorium tracks active runtime state.
-          </p>
-          <p class="section-sublead">
-            Instead of only storing chat history, Contorium maintains:
-          </p>
-          <div class="compare-two-col">
-            <article class="compare-box compare-box--muted">
-              <h3>Static memory</h3>
-              <ul>
-                <li>Search old notes and chat logs</li>
-                <li>Retrieve past summaries</li>
-                <li>RAG-style embeddings</li>
-                <li>Vector search over stale context</li>
+          <div class="capability-grid">
+            <article class="capability-card">
+              <div class="capability-icon" aria-hidden="true">◎</div>
+              <h2 class="capability-title">Current Focus</h2>
+              <p class="capability-subtitle">What you are actively building right now.</p>
+              <ul class="capability-list">
+                <li>Tracks your current task in real time</li>
+                <li>Keeps AI aligned with your intent</li>
+                <li>Survives restarts and model switches</li>
               </ul>
             </article>
-            <article class="compare-box compare-box--highlight">
-              <h3>Runtime continuity</h3>
-              <ul>
-                <li>Current workspace focus</li>
-                <li>Active development areas</li>
-                <li>Git-aware project evolution</li>
-                <li>Architectural continuity</li>
-                <li>Debugging progress</li>
-                <li>Ongoing coding workflows</li>
+            <article class="capability-card">
+              <div class="capability-icon" aria-hidden="true">⎇</div>
+              <h2 class="capability-title">Workspace State</h2>
+              <p class="capability-subtitle">The full context of your project.</p>
+              <ul class="capability-list">
+                <li>Open files and recent activity</li>
+                <li>Git changes and working tree state</li>
+                <li>Active working set across your IDE</li>
+              </ul>
+            </article>
+            <article class="capability-card">
+              <div class="capability-icon" aria-hidden="true">↻</div>
+              <h2 class="capability-title">Session Continuity</h2>
+              <p class="capability-subtitle">Resume work instantly across time and tools.</p>
+              <ul class="capability-list">
+                <li>Persistent workspace understanding</li>
+                <li>Cross-session continuity</li>
+                <li>Works across Cursor, Claude Code, Codex</li>
               </ul>
             </article>
           </div>
-          <p class="problem-closer" style="margin-top: 28px">
-            <strong>Software development is a continuous runtime process—not a single prompt.</strong> Contorium helps
-            agents maintain continuity instead of repeatedly reconstructing context.
-          </p>
         </div>
       </section>
 
-      <!-- Why Contorium -->
-      <section class="section section-problem" id="why">
+      <!-- Differentiation -->
+      <section class="section section-strip" id="differentiation">
         <div class="container">
-          <h2 class="section-title">Context window ≠ runtime continuity</h2>
-          <p class="section-lead">
-            Large context windows are not enough. Even frontier models still suffer from context drift, architectural
-            forgetting, repeated reasoning, and workflow fragmentation.
-          </p>
-          <ul class="problem-list">
-            <li>Context drift across long sessions</li>
-            <li>Architectural forgetting between chats</li>
-            <li>Repeated reasoning on the same problems</li>
-            <li>Workflow fragmentation across tools and models</li>
-          </ul>
-          <p class="problem-closer">
-            <strong>Software development is a continuous runtime process—not a single prompt.</strong> Contorium is
-            designed to preserve <strong>runtime continuity</strong> across AI-assisted coding sessions.
-          </p>
-        </div>
-      </section>
-
-      <!-- Runtime lifecycle -->
-      <section class="section section-mcp" id="lifecycle">
-        <div class="container two-col">
-          <div>
-            <span class="section-badge">Lifecycle memory</span>
-            <h2 class="section-title">Runtime lifecycle awareness</h2>
-            <p class="section-lead">
-              Contorium treats workspace memory as a living runtime system—not an endless chat log.
-            </p>
-            <ul class="memory-bullets">
-              <li>Context changes over time; focus shifts</li>
-              <li>Architectural importance evolves</li>
-              <li>Recent activity outweighs stale history</li>
-              <li>Active context management within token budgets</li>
-            </ul>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 20px 0 0; max-width: 520px">
-              Instead of endlessly accumulating chat logs, Contorium maintains an evolving runtime memory model for AI
-              coding workflows.
-            </p>
-          </div>
-          <div class="showcase-visual">
-            <div class="memory-row">
-              <div class="memory-icon">↻</div>
-              <div>
-                <strong style="color: var(--text)">Evolving state</strong>
-                <div style="color: var(--text-muted); font-size: 0.85rem">Workspace runtime model, not static retrieval</div>
-              </div>
-            </div>
-            <div class="memory-row">
-              <div class="memory-icon">◎</div>
-              <div>
-                <strong style="color: var(--text)">Active focus</strong>
-                <div style="color: var(--text-muted); font-size: 0.85rem">Current development areas ranked over time</div>
-              </div>
-            </div>
-            <div class="memory-row">
-              <div class="memory-icon">⎇</div>
-              <div>
-                <strong style="color: var(--text)">Project evolution</strong>
-                <div style="color: var(--text-muted); font-size: 0.85rem">Git-aware tracking of how the codebase changes</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Runtime workspace tracking -->
-      <section class="section" id="memory">
-        <div class="container two-col">
-          <div>
-            <h2 class="section-title">Runtime-aware workspace tracking</h2>
-            <p class="section-lead">
-              Contorium continuously tracks evolving workspace runtime state—designed for long-running AI-assisted
-              development.
-            </p>
-            <ul class="memory-bullets">
-              <li>Active coding focus and development areas</li>
-              <li>Evolving workspace state over time</li>
-              <li>Recent architectural decisions</li>
-              <li>Git activity and project evolution</li>
-              <li>Ongoing debugging workflows</li>
-              <li>Project continuity across sessions</li>
-            </ul>
-          </div>
-          <div class="showcase-visual">
-            <div class="memory-row">
-              <div class="memory-icon">◎</div>
-              <div>
-                <strong style="color: var(--text)">Focus</strong>
-                <div style="color: var(--text-muted); font-size: 0.85rem">Payment retry &amp; idempotency keys</div>
-              </div>
-            </div>
-            <div class="memory-row">
-              <div class="memory-icon">⎇</div>
-              <div>
-                <strong style="color: var(--text)">Git</strong>
-                <div style="color: var(--text-muted); font-size: 0.85rem">Staged: handlers/pay.ts · Modified: config</div>
-              </div>
-            </div>
-            <div class="memory-row">
-              <div class="memory-icon">◇</div>
-              <div>
-                <strong style="color: var(--text)">Compressed runtime state</strong>
-                <div style="color: var(--text-muted); font-size: 0.85rem">Ranked activity + lifecycle-aware context within token budget</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Demo: Without / With -->
-      <section class="section" id="demo">
-        <div class="container">
-          <h2 class="section-title">Agent continuity in practice</h2>
-          <p class="section-lead">Same workspace. With Contorium, your agent resumes runtime state instead of starting from zero.</p>
-          <div class="demo-compare">
-            <article class="demo-panel demo-panel--without">
-              <div class="demo-panel-label">Without Contorium</div>
-              <div class="demo-chat">
-                <span class="demo-role">AI</span>
-                <p>“What were you working on?”</p>
-              </div>
-            </article>
-            <article class="demo-panel demo-panel--with">
-              <div class="demo-panel-label">With Contorium</div>
-              <div class="demo-chat">
-                <span class="demo-role">AI</span>
-                <p>You were refactoring the payment retry system.</p>
-                <p class="demo-detail"><strong>Recent files:</strong></p>
-                <ul class="demo-files">
-                  <li>retry.ts</li>
-                  <li>payment.ts</li>
-                </ul>
-                <p class="demo-detail"><strong>Recent Git changes:</strong></p>
-                <ul class="demo-files">
-                  <li>retry classification update</li>
-                  <li>duplicate request fix</li>
-                </ul>
-              </div>
-            </article>
+          <h2 class="section-title section-title--center">Not a memory tool. A runtime layer.</h2>
+          <div class="diff-table-wrap">
+            <table class="diff-table">
+              <thead>
+                <tr>
+                  <th scope="col">Existing tools</th>
+                  <th scope="col">Contorium</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Store and retrieve context</td>
+                  <td class="diff-highlight">Maintains live workspace state</td>
+                </tr>
+                <tr>
+                  <td>RAG-based recall systems</td>
+                  <td class="diff-highlight">Continuous runtime awareness</td>
+                </tr>
+                <tr>
+                  <td>Prompt-based memory</td>
+                  <td class="diff-highlight">Persistent session continuity</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
       <!-- How it works -->
-      <section class="section" id="how">
-        <div class="container">
-          <h2 class="section-title">How it works</h2>
-          <p class="section-lead">From raw workspace activity to structured runtime state your agents can use.</p>
-          <div class="flow flow-vertical">
-            <div class="flow-step">Workspace activity</div>
-            <span class="flow-arrow flow-arrow--down" aria-hidden="true">↓</span>
-            <div class="flow-step">Workspace scanner</div>
-            <span class="flow-arrow flow-arrow--down" aria-hidden="true">↓</span>
-            <div class="flow-step">Runtime state compression</div>
-            <span class="flow-arrow flow-arrow--down" aria-hidden="true">↓</span>
-            <div class="flow-step flow-step--highlight">Structured runtime state</div>
-            <span class="flow-arrow flow-arrow--down" aria-hidden="true">↓</span>
-            <div class="flow-step flow-step--agents">Cursor · Claude Code · Codex · MCP</div>
+      <section class="section section-compact" id="how">
+        <div class="container how-centered">
+          <p class="how-oneline">
+            Contorium runs locally inside your development environment and maintains a lightweight runtime state of
+            your workspace.
+          </p>
+          <div class="mini-flow" aria-label="Runtime flow">
+            <span class="mini-flow-step">IDE</span>
+            <span class="mini-flow-arrow" aria-hidden="true">→</span>
+            <span class="mini-flow-step mini-flow-step--highlight">Runtime layer</span>
+            <span class="mini-flow-arrow" aria-hidden="true">→</span>
+            <span class="mini-flow-step">Workspace state</span>
           </div>
         </div>
       </section>
 
-      <!-- Features -->
-      <section class="section" id="features">
-        <div class="container">
-          <span class="section-badge">Local-first infrastructure</span>
-          <h2 class="section-title">Runtime infrastructure</h2>
-          <p class="section-lead">Local-first workspace runtime state—optional BYOK, no hidden cloud store.</p>
-          <div class="cards">
-            <article class="card">
-              <div class="card-num">01</div>
-              <h3>Runtime workspace state</h3>
-              <p>Current focus, active modules, debugging tasks, and workspace evolution under <code style="color: var(--accent)">.contora/</code>.</p>
-            </article>
-            <article class="card">
-              <div class="card-num">02</div>
-              <h3>Agent continuity</h3>
-              <p>Close Cursor, switch models, restart IDE—agents still know what changed and what matters.</p>
-            </article>
-            <article class="card">
-              <div class="card-num">03</div>
-              <h3>Git-aware runtime tracking</h3>
-              <p>Modified, staged, and recent commits—project evolution instead of isolated snapshots.</p>
-            </article>
-            <article class="card">
-              <div class="card-num">04</div>
-              <h3>Lifecycle-aware compression</h3>
-              <p>Rank activity, compress historical runtime state, prioritize active development areas.</p>
-            </article>
-            <article class="card">
-              <div class="card-num">05</div>
-              <h3>MCP for Codex &amp; agents</h3>
-              <p><code>get_workspace_context</code>, <code>store_memory</code>, and more—Codex, Claude Code, Cursor Agent.</p>
-            </article>
-            <article class="card">
-              <div class="card-num">06</div>
-              <h3>Local-first</h3>
-              <p>No cloud sync, no hidden telemetry—developer-controlled runtime memory infrastructure.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Compatibility -->
-      <section class="section" id="compatibility">
-        <div class="container" style="text-align: center">
-          <h2 class="section-title">Built for modern AI coding runtimes</h2>
-          <p class="section-lead" style="margin-left: auto; margin-right: auto">
-            Runtime continuity for Cursor, VS Code, Claude Code, Codex, and MCP-based agent systems.
+      <!-- Integrations -->
+      <section class="section" id="integrations">
+        <div class="container integrations-centered">
+          <h2 class="section-title section-title--center">Integrations</h2>
+          <p class="section-lead section-lead--center">
+            Works with AI coding agents via MCP and native extensions.
           </p>
           <div class="compat-grid" aria-label="Compatible platforms">
-            <span class="compat-item">VS Code</span>
-            <span class="compat-item">Cursor</span>
-            <span class="compat-item">Claude Code</span>
-            <span class="compat-item">Codex</span>
-            <span class="compat-item">MCP</span>
-            <span class="compat-item">Open VSX</span>
+            <span class="compat-item" title="Works via extension">Cursor</span>
+            <span class="compat-item" title="Works via extension">VS Code</span>
+            <span class="compat-item" title="Works via MCP">Claude Code</span>
+            <span class="compat-item" title="Works via MCP">Codex</span>
+            <span class="compat-item" title="Works via MCP">MCP-compatible tools</span>
           </div>
+        </div>
+      </section>
+
+      <!-- Why it matters -->
+      <section class="section section-strip" id="why">
+        <div class="container why-grid">
+          <div>
+            <h2 class="section-title">AI coding assistants lose context too easily.</h2>
+            <p class="section-lead">Contorium eliminates the friction that breaks long-running development flows.</p>
+          </div>
+          <ul class="impact-list">
+            <li>Re-explaining project state</li>
+            <li>Lost work between sessions</li>
+            <li>Fragmented AI conversations</li>
+          </ul>
         </div>
       </section>
 
@@ -454,155 +271,48 @@ claude --plugin-dir .</code></pre>
         </div>
       </section>
 
-      <!-- Keywords -->
-      <section class="keywords-band" aria-label="Core capabilities">
-        <div class="container">
-          <p class="keywords-label">Runtime continuity</p>
-          <ul class="keywords-list">
-            <li><strong>Runtime continuity</strong></li>
-            <li><strong>Runtime memory</strong></li>
-            <li><strong>Workspace runtime state</strong></li>
-            <li><strong>Agent continuity</strong></li>
-            <li><strong>Workspace evolution</strong></li>
-            <li><strong>Coding runtime</strong></li>
-            <li>Codex</li>
-            <li>Claude Code</li>
-            <li>Lifecycle memory</li>
-            <li>Active context management</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Comparison -->
-      <section class="section">
-        <div class="container">
-          <h2 class="section-title">Runtime continuity vs. static memory</h2>
-          <p class="section-lead">Why active runtime state beats rebuilding context every session.</p>
-          <div style="overflow-x: auto">
-            <table class="compare-table">
-              <thead>
-                <tr>
-                  <th>Capability</th>
-                  <th>Without runtime continuity</th>
-                  <th>Contorium</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Active workspace runtime state</td>
-                  <td class="check-partial">Manual</td>
-                  <td class="check-yes">Automatic</td>
-                </tr>
-                <tr>
-                  <td>MCP / agent runtime access</td>
-                  <td class="check-partial">Rare</td>
-                  <td class="check-yes">Built-in</td>
-                </tr>
-                <tr>
-                  <td>Git-aware project evolution</td>
-                  <td class="check-partial">Sometimes</td>
-                  <td class="check-yes">Built-in</td>
-                </tr>
-                <tr>
-                  <td>Cross-session agent continuity</td>
-                  <td class="check-partial">Limited</td>
-                  <td class="check-yes">Designed for it</td>
-                </tr>
-                <tr>
-                  <td>Lifecycle-aware compression</td>
-                  <td class="check-partial">Ad hoc</td>
-                  <td class="check-yes">Compression + budgets</td>
-                </tr>
-                <tr>
-                  <td>Long-running coding workflows</td>
-                  <td class="check-partial">Fragile</td>
-                  <td class="check-yes">Runtime continuity</td>
-                </tr>
-                <tr>
-                  <td>Local-first runtime data</td>
-                  <td class="check-partial">Varies</td>
-                  <td class="check-yes">Workspace-owned</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA -->
+      <!-- Final CTA -->
       <section class="cta-band">
-        <h2>Give your agents runtime continuity</h2>
-        <p>Stop rebuilding workspace context. Start continuing where your last session left off.</p>
+        <p class="final-statement">
+          Contorium is a runtime continuity layer that keeps AI coding agents aligned with your active workspace across
+          sessions and tools.
+        </p>
+        <h2>Keep your AI coding workspace continuously alive</h2>
         <div class="cta-buttons">
-          <a href="#install" class="btn btn-primary">Get started</a>
-          <a href="mcp/" class="btn btn-ghost">View MCP setup</a>
+          <a href="#install" class="btn btn-primary">Install extension</a>
+          <a href="docs/" class="btn btn-ghost">Get started</a>
         </div>
-        <p class="cta-note">Runtime continuity · Workspace evolution · Codex · Claude Code · MCP</p>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer site-footer--minimal">
       <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a href="#" class="logo">
-              <img
-                class="logo-img"
-                src="logo.png"
-                width="36"
-                height="36"
-                alt="Contorium logo: letter C with blue-to-magenta arc on cyan-to-purple circle"
-              />
-              Contorium
-            </a>
-            <p>Runtime continuity infrastructure for AI coding agents—local, MCP-compatible, Codex and Claude Code ready.</p>
-          </div>
-          <div class="footer-links">
-            <div class="footer-col">
-              <h4>Product</h4>
-              <ul>
-                <li><a href="#continuity">Continuity</a></li>
-                <li><a href="#features">Infrastructure</a></li>
-                <li><a href="#how">How it works</a></li>
-                <li><a href="#install">Install</a></li>
-                <li><a href="mcp/">MCP</a></li>
-                <li><a href="architecture/">Architecture</a></li>
-                <li><a href="docs/">Docs</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>Resources</h4>
-              <ul>
-                <li><a href="blog/">Blog</a></li>
-                <li>
-                  <a href="https://github.com/ContoriumLabs/contorium" target="_blank" rel="noopener noreferrer">GitHub repository</a>
-                </li>
-                <li>
-                  <a
-                    href="https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >VS Marketplace</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://open-vsx.org/?search=contorium&sortBy=relevance&sortOrder=desc"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Open VSX</a
-                  >
-                </li>
-                <li>
-                  <a href="https://github.com/ContoriumLabs/contorium#readme" target="_blank" rel="noopener noreferrer">README</a>
-                </li>
-              </ul>
-            </div>
+        <div class="footer-minimal">
+          <a href="#" class="logo">
+            <img
+              class="logo-img"
+              src="logo.png"
+              width="36"
+              height="36"
+              alt="Contorium logo: letter C with blue-to-magenta arc on cyan-to-purple circle"
+            />
+            Contorium
+          </a>
+          <ul class="footer-trust">
+            <li>Local-first</li>
+            <li>No telemetry</li>
+            <li>Open ecosystem via MCP</li>
+          </ul>
+          <div class="footer-minimal-links">
+            <a href="docs/">Docs</a>
+            <a href="mcp/">MCP</a>
+            <a href="architecture/">Architecture</a>
+            <a href="blog/">Blog</a>
+            <a href="https://github.com/ContoriumLabs/contorium" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
         <div class="footer-bottom">
           <span>© Contorium. MIT License.</span>
-          <span>Runtime continuity · Workspace evolution · MCP · Local-first</span>
         </div>
       </div>
     </footer>
