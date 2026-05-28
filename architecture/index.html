@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contorium memory engine architecture — workspace scanner, compression, structured memory, and local-first .contora runtime."
+      content="Contorium runtime memory architecture — workspace scanner, compression, lifecycle-aware state, and MCP interface."
     />
-    <title>Architecture — Contorium Workspace Memory Runtime</title>
+    <title>Architecture — Contorium Runtime Memory Engine</title>
     <link rel="icon" href="../logo.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,11 +41,11 @@
     <main class="page-main">
       <header class="page-hero">
         <div class="container">
-          <span class="section-badge">Workspace Memory Runtime</span>
-          <h1>Memory engine architecture</h1>
+          <span class="section-badge">Runtime infrastructure</span>
+          <h1>Runtime memory engine</h1>
           <p class="page-hero-lead">
-            Contorium is AI memory infrastructure—not a chat UI. A local pipeline turns workspace activity into structured,
-            compressed memory your agents can retrieve across sessions.
+            Contorium is AI runtime infrastructure—not a chat UI. A local pipeline turns workspace activity into evolving
+            runtime state your agents can use across Codex, Claude Code, and IDE workflows.
           </p>
         </div>
       </header>
@@ -65,7 +65,7 @@
             <span class="arch-arrow" aria-hidden="true">→</span>
             <span class="arch-box" style="border-color: rgba(91, 167, 255, 0.4); background: var(--accent-soft)">Structured workspace memory</span>
             <span class="arch-arrow" aria-hidden="true">→</span>
-            <span class="arch-box" style="border-color: rgba(124, 92, 255, 0.35)">Claude · Cursor · GPT · Agents</span>
+            <span class="arch-box" style="border-color: rgba(124, 92, 255, 0.35)">Codex · Claude Code · Cursor · MCP</span>
           </div>
         </div>
       </section>

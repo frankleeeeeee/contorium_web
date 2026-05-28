@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contorium MCP — stdio server for Claude Code and Cursor. Build, configure, and use store_memory, search_memory, get_memory, and get_workspace_context."
+      content="Contorium MCP — runtime memory for Codex, Claude Code, and Cursor Agent. store_memory, get_workspace_context, and platform setup."
     />
-    <title>Contorium MCP — Claude Code &amp; Cursor Setup</title>
+    <title>Contorium MCP — Codex, Claude Code &amp; Agent Setup</title>
     <link rel="icon" href="../logo.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,8 +44,8 @@
           <span class="section-badge">stdio MCP server</span>
           <h1>Contorium MCP Server</h1>
           <p class="page-hero-lead">
-            Exposes Contorium memory tools over MCP for <strong>Claude Code</strong>. Works alongside the VS Code extension
-            (sidebar + scanners)—MCP adds agent-callable tools; it does not replace the extension UI.
+            Runtime memory tools for <strong>Codex</strong>, <strong>Claude Code</strong>, and <strong>Cursor Agent</strong>.
+            Complements the Contorium VSIX—use MCP when the agent runs without the sidebar UI.
           </p>
         </div>
       </header>
@@ -71,9 +71,44 @@
             </li>
             <li>
               <strong>Build the MCP server</strong>
-              From the repository root (see below). Entry point: <code style="color: var(--accent)">packages/mcp/dist/server.js</code>.
+              From the <a href="https://github.com/ContoriumLabs/contorium">Contorium</a> repo. Portable entry:
+              <code style="color: var(--accent)">bin/contorium-mcp-launch.cjs</code>.
             </li>
           </ol>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="container">
+          <h2>Platforms</h2>
+          <div class="platform-table-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Platform</th>
+                  <th>Plugin manifest</th>
+                  <th>MCP config</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Codex</strong></td>
+                  <td><code>.codex-plugin/plugin.json</code></td>
+                  <td><code>.mcp.json</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Claude Code</strong></td>
+                  <td><code>.claude-plugin/plugin.json</code></td>
+                  <td><code>.mcp.claude.json</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Cursor</strong></td>
+                  <td><code>.cursor-plugin/plugin.json</code></td>
+                  <td><code>mcp.json</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -94,8 +129,9 @@ npm run build:mcp
 npm run install:mcp</code></pre>
           </div>
           <ul class="memory-bullets" style="margin-top: 20px">
-            <li><strong style="color: var(--text)">stdio entry:</strong> <code style="color: var(--accent)">packages/mcp/dist/server.js</code></li>
-            <li><strong style="color: var(--text)">CLI bin</strong> (after <code>npm install</code> in <code>packages/mcp</code>): <code style="color: var(--accent)">contorium-mcp</code></li>
+            <li><strong style="color: var(--text)">Portable entry:</strong> <code style="color: var(--accent)">bin/contorium-mcp-launch.cjs</code></li>
+            <li><strong style="color: var(--text)">stdio entry:</strong> <code style="color: var(--accent)">packages/mcp/dist/server.js</code> (after build)</li>
+            <li><strong style="color: var(--text)">Also runs via:</strong> <code style="color: var(--accent)">npm run compile</code> (sync + runtime + MCP + extension)</li>
           </ul>
           <p class="section-cta-inline">
             <a href="../docs/MCP.md" class="btn btn-ghost btn-sm">docs/MCP.md</a>
@@ -104,13 +140,33 @@ npm run install:mcp</code></pre>
         </div>
       </section>
 
-      <section class="page-section" id="claude-code">
+      <section class="page-section" id="codex">
+        <div class="container">
+          <h2>Codex</h2>
+          <p>
+            After <a href="#build"><code>npm run build:mcp</code></a>, add Contorium MCP to Codex. Plugin manifest:
+            <code style="color: var(--accent)">.codex-plugin/plugin.json</code> · MCP: <code style="color: var(--accent)">.mcp.json</code>.
+          </p>
+          <div class="code-block" style="max-width: 640px">
+            <div class="code-block-header">Codex MCP</div>
+            <pre><code>npm run build:mcp
+codex mcp add contorium -- node ./bin/contorium-mcp-launch.cjs</code></pre>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem">
+            Install as a Codex plugin:
+            <a href="https://developers.openai.com/codex/plugins/build" target="_blank" rel="noopener noreferrer">Codex plugins docs</a>.
+            See <code>.agents/plugins/marketplace.example.json</code> in the Contorium repo for a local marketplace example.
+          </p>
+        </div>
+      </section>
+
+      <section class="page-section section-mcp" id="claude-code">
         <div class="container">
           <h2>Claude Code</h2>
           <p>
-            See also <a href="../docs/MCP.md">docs/MCP.md</a>. Official plugin layout uses
-            <code style="color: var(--accent)">.claude-plugin/plugin.json</code> and root
-            <code style="color: var(--accent)">.mcp.json</code>. After <a href="#build"><code>npm run build:mcp</code></a>:
+            See <a href="../docs/MCP.md">docs/MCP.md</a>. Uses
+            <code style="color: var(--accent)">.claude-plugin/plugin.json</code> and
+            <code style="color: var(--accent)">.mcp.claude.json</code>. After <a href="#build"><code>npm run build:mcp</code></a>:
           </p>
 
           <h3 style="font-size: 1rem; margin: 28px 0 12px">Option A — Load plugin locally</h3>
@@ -118,14 +174,14 @@ npm run install:mcp</code></pre>
             <pre><code>claude --plugin-dir .</code></pre>
           </div>
 
-          <h3 style="font-size: 1rem; margin: 28px 0 12px">Option B — Add MCP only (project scope)</h3>
+          <h3 style="font-size: 1rem; margin: 28px 0 12px">Option B — MCP only (project scope)</h3>
           <div class="code-block" style="max-width: 640px">
             <pre><code>claude mcp add --scope project contorium \
-  -- node ./packages/mcp/dist/server.js</code></pre>
+  -- node ./bin/contorium-mcp-launch.cjs</code></pre>
           </div>
           <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 640px">
             Plugin MCP config uses <code>${CLAUDE_PLUGIN_ROOT}</code> and <code>${CLAUDE_PROJECT_DIR}</code> (see
-            <code>.mcp.json</code> in the repo).
+            <code>.mcp.claude.json</code> in the repo).
           </p>
 
           <h3 style="font-size: 1rem; margin: 28px 0 12px">Environment variables</h3>
@@ -158,10 +214,14 @@ npm run install:mcp</code></pre>
 
       <section class="page-section section-mcp" id="cursor">
         <div class="container">
-          <h2>Cursor IDE</h2>
+          <h2>Cursor Agent (MCP)</h2>
           <div class="blog-coming" style="max-width: none; text-align: left">
             <p><strong style="color: var(--text)">Coming soon.</strong></p>
-            <p style="margin-top: 8px">Cursor MCP and Marketplace setup will be documented here. For now, use the VS Code extension or Claude Code MCP flow above.</p>
+            <p style="margin-top: 8px">
+              Detailed Cursor Agent MCP wiring will be added here. The repo ships root <code>mcp.json</code> (see platform table
+              above). For now: install the <strong>Contorium VSIX</strong>, or use <a href="#codex">Codex</a> /
+              <a href="#claude-code">Claude Code</a> MCP flows.
+            </p>
           </div>
         </div>
       </section>
@@ -276,7 +336,7 @@ npm run install:mcp</code></pre>
               </li>
               <li>
                 <strong>Let agents use MCP</strong>
-                Claude Code agents call <code>get_workspace_context</code> and memory tools—or use sidebar
+                Codex / Claude Code agents call <code>get_workspace_context</code> and memory tools—or use sidebar
                 <strong>Copy AI-ready context</strong> for one-click export.
               </li>
             </ol>
@@ -317,7 +377,7 @@ npm run install:mcp</code></pre>
             <article class="demo-panel demo-panel--with">
               <div class="demo-panel-label">MCP server</div>
               <ul class="memory-bullets">
-                <li>Agent-callable tools (Claude Code)</li>
+                <li>Agent-callable tools (Codex, Claude Code)</li>
                 <li><code>get_workspace_context</code> from <code>state.json</code></li>
                 <li><code>store_memory</code> / <code>search_memory</code> / <code>get_memory</code></li>
                 <li>stdio — no duplicate UI layer</li>
@@ -360,7 +420,7 @@ npm run install:mcp</code></pre>
               <img class="logo-img" src="../logo.png" width="36" height="36" alt="Contorium" />
               Contorium
             </a>
-            <p>Contorium MCP — persistent workspace memory for Claude Code.</p>
+            <p>Contorium MCP — runtime memory for Codex, Claude Code, and agents.</p>
           </div>
           <div class="footer-links">
             <div class="footer-col">
@@ -385,7 +445,7 @@ npm run install:mcp</code></pre>
         </div>
         <div class="footer-bottom">
           <span>© Contorium. MIT License.</span>
-          <span>store_memory · get_workspace_context · Claude Code</span>
+          <span>store_memory · get_workspace_context · Codex · Claude Code</span>
         </div>
       </div>
     </footer>

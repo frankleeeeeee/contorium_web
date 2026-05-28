@@ -1,6 +1,6 @@
 # Contorium Web
 
-Static marketing site for **Contorium** — persistent workspace memory for AI coding agents. Covers MCP integration, memory engine architecture, installation, and product positioning.
+Static marketing site for **Contorium** — runtime memory infrastructure for AI coding agents (Cursor, Claude Code, Codex, MCP). Covers installation, MCP setup, and architecture.
 
 ## Site structure
 

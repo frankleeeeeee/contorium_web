@@ -5,6 +5,7 @@
     "index.html",
     "README.md",
     "修改方案2.md",
+    "mcp/README.md",
     "修改方案.md",
     "docs/index.html",
     "mcp/index.html",
@@ -12,6 +13,7 @@
     "architecture/index.html"
   ],
   "recentFiles": [
+    "修改方案2.md",
     "architecture/index.html",
     ".contora/events/sess_mp487yx1_2450523b.jsonl",
     "README.md"
@@ -19,8 +21,17 @@
   "gitStaged": [],
   "gitWorking": [
     ".contora/events/sess_mpnvvwgi_df99e763.jsonl",
-    ".contora/state.json"
+    ".contora/state.json",
+    "README.md",
+    "architecture/index.html",
+    "docs/MCP.md",
+    "docs/index.html",
+    "index.html",
+    "mcp/README.md",
+    "mcp/index.html",
+    "styles.css",
+    "修改方案2.md"
   ],
   "notes": "",
-  "lastUpdated": 1779894994833
+  "lastUpdated": 1779932735328
 }

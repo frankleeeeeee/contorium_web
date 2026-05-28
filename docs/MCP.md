@@ -1,6 +1,6 @@
-# Contorium MCP (Claude Code + Cursor)
+# Contorium MCP (Codex + Claude Code + Cursor)
 
-stdio MCP server exposing Contorium memory tools. Works alongside the **VS Code / Cursor extension** (sidebar + scanners); does not replace the extension UI.
+stdio MCP server exposing Contorium **runtime memory** tools. Works alongside the **VS Code / Cursor extension** (sidebar + scanners); does not replace the extension UI.
 
 ## Tools
 
@@ -21,14 +21,28 @@ npm run build:mcp
 npm run compile
 ```
 
-First-time only, you can also run `npm run install:mcp` explicitly.
+Portable entry: `bin/contorium-mcp-launch.cjs`  
+stdio entry: `packages/mcp/dist/server.js` (after build)
 
-Entry: `packages/mcp/dist/server.js`  
-CLI bin (after `npm install` in `packages/mcp`): `contorium-mcp`
+## Platforms
+
+| Platform | Plugin manifest | MCP config |
+|----------|-----------------|------------|
+| Codex | `.codex-plugin/plugin.json` | `.mcp.json` |
+| Claude Code | `.claude-plugin/plugin.json` | `.mcp.claude.json` |
+| Cursor | `.cursor-plugin/plugin.json` | `mcp.json` |
+
+## Codex
+
+After `npm run build:mcp`:
+
+```bash
+codex mcp add contorium -- node ./bin/contorium-mcp-launch.cjs
+```
+
+Install as plugin: [Codex plugins](https://developers.openai.com/codex/plugins/build). Local marketplace example: `.agents/plugins/marketplace.example.json` in the repo.
 
 ## Claude Code (plugin)
-
-Official layout uses [`.claude-plugin/plugin.json`](https://code.claude.com/docs/en/plugins) and root [`.mcp.json`](https://code.claude.com/docs/en/mcp). This repo includes both for Claude Code plugin installs.
 
 After `npm run build:mcp`, load locally:
 
@@ -39,10 +53,10 @@ claude --plugin-dir .
 Or add MCP only (project scope):
 
 ```bash
-claude mcp add --scope project contorium -- node ./packages/mcp/dist/server.js
+claude mcp add --scope project contorium -- node ./bin/contorium-mcp-launch.cjs
 ```
 
-Plugin MCP config uses `${CLAUDE_PLUGIN_ROOT}` and `${CLAUDE_PROJECT_DIR}` (see `.mcp.json`).
+Plugin MCP config uses `${CLAUDE_PLUGIN_ROOT}` and `${CLAUDE_PROJECT_DIR}` (see `.mcp.claude.json`).
 
 Environment variables:
 
@@ -50,24 +64,10 @@ Environment variables:
 - `CLAUDE_PROJECT_DIR` — set by Claude Code when spawning MCP (preferred for plugin installs)
 - `CLAUDE_PROJECT_ROOT` — alias accepted by some integrations
 
-## Cursor IDE
+## Cursor Agent (MCP)
 
-This repo ships `mcp.json` at the root and references it from `.cursor-plugin/plugin.json` for Marketplace installs. For local development, point Cursor MCP settings to:
-
-```json
-{
-  "mcpServers": {
-    "contorium": {
-      "command": "node",
-      "args": ["${workspaceFolder}/packages/mcp/dist/server.js"],
-      "env": {
-        "CONTORIUM_WORKSPACE": "${workspaceFolder}"
-      }
-    }
-  }
-}
-```
+Point Cursor MCP to root `mcp.json` (uses `${workspaceFolder}/packages/mcp/dist/server.js`). Requires `npm run build:mcp`. Detailed Cursor Agent docs on the [MCP page](../mcp/) — coming soon.
 
 ## VS Code extension
 
-Unchanged: install the **Contorium** VSIX for sidebar, event tracking, and **Copy AI-ready context**. MCP adds agent-callable tools for Claude Code and Cursor Agent without duplicating the UI layer.
+Install the **Contorium** VSIX for sidebar, event tracking, and **Copy AI-ready context**. MCP adds agent-callable tools for Codex, Claude Code, and Cursor Agent without duplicating the UI layer.

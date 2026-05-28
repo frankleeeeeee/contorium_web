@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Install Contorium — persistent workspace memory for VS Code, Cursor, and AI agents. Extension setup, MCP, and BYOK configuration."
+      content="Install Contorium — runtime memory infrastructure for VS Code, Cursor, Codex, Claude Code, and MCP agents."
     />
     <title>Docs — Install Contorium</title>
     <link rel="icon" href="../logo.png" type="image/png" />
@@ -47,8 +47,7 @@
         <div class="container">
           <h1>Installation &amp; setup</h1>
           <p class="page-hero-lead">
-            Give Claude, Cursor, and AI coding agents long-term memory across sessions, model switches, and large
-            codebases—starting with the Contorium extension and optional MCP connection.
+            Runtime continuity for AI-assisted development—Contorium VSIX plus MCP for Codex, Claude Code, and agents.
           </p>
         </div>
       </header>
@@ -68,7 +67,14 @@
                     >VS Code <span class="install-arrow" aria-hidden="true">→</span></a
                   >
                 </li>
-                <li class="install-empty">Cursor — coming soon</li>
+                <li>
+                  <a
+                    href="https://marketplace.visualstudio.com/search?term=contorium&target=VSCode&category=All%20categories&sortBy=Relevance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Cursor (VSIX) <span class="install-arrow" aria-hidden="true">→</span></a
+                  >
+                </li>
                 <li>
                   <a
                     href="https://open-vsx.org/?search=contorium&sortBy=relevance&sortOrder=desc"
@@ -82,6 +88,9 @@
             <div class="install-col">
               <h3>MCP / agent runtime</h3>
               <ul class="install-links">
+                <li>
+                  <a href="../mcp/#codex">Codex <span class="install-arrow" aria-hidden="true">→</span></a>
+                </li>
                 <li>
                   <a href="../mcp/#claude-code">Claude Code <span class="install-arrow" aria-hidden="true">→</span></a>
                 </li>
@@ -117,20 +126,20 @@
 
       <section class="page-section section-mcp">
         <div class="container">
-          <h2>Connect via MCP (Claude Code)</h2>
+          <h2>Connect via MCP (Codex &amp; Claude Code)</h2>
           <p>
-            The MCP server (<code style="color: var(--accent)">packages/mcp/dist/server.js</code>) works
-            <strong>alongside</strong> the extension—install the sidebar extension first so
+            Portable entry <code style="color: var(--accent)">bin/contorium-mcp-launch.cjs</code> works
+            <strong>alongside</strong> the extension—install the VSIX first so
             <code style="color: var(--accent)">.contora/state.json</code> is populated.
           </p>
           <p class="section-cta-inline">
-            <a href="../mcp/#claude-code" class="btn btn-primary btn-sm">Claude Code setup</a>
-            <a href="../mcp/#build" class="btn btn-ghost btn-sm">Build MCP server</a>
+            <a href="../mcp/#codex" class="btn btn-primary btn-sm">Codex setup</a>
+            <a href="../mcp/#claude-code" class="btn btn-ghost btn-sm">Claude Code</a>
+            <a href="../mcp/#build" class="btn btn-ghost btn-sm">Build MCP</a>
             <a href="MCP.md" class="btn btn-ghost btn-sm">docs/MCP.md</a>
-            <a href="../mcp/" class="btn btn-ghost btn-sm">Full MCP guide</a>
           </p>
           <div class="blog-coming" style="max-width: 560px; margin-top: 24px; text-align: left">
-            <p><strong style="color: var(--text)">Cursor MCP</strong> — coming soon.</p>
+            <p><strong style="color: var(--text)">Cursor Agent MCP</strong> — detailed docs coming soon on the <a href="../mcp/#cursor">MCP page</a>.</p>
           </div>
         </div>
       </section>
@@ -179,7 +188,7 @@ npm run compile</code></pre>
         <h2>Ready to give your agents memory?</h2>
         <div class="cta-buttons">
           <a href="../index.html#install" class="btn btn-primary">Install extension</a>
-          <a href="../mcp/#claude-code" class="btn btn-ghost">Claude Code MCP</a>
+          <a href="../mcp/#codex" class="btn btn-ghost">Codex MCP</a>
         </div>
       </section>
     </main>
